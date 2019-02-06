@@ -11,9 +11,18 @@ con CSS
 */
 
 /* Selector de etiqueta */
-header{
-    background: #3498db;
-    color : #34495e
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
 }
 
 /*Seelctor de clase */
