@@ -9,70 +9,73 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
     <div>
-      <figure>
+      <figure class="logo">
         <img src="img/MyLogo.png" alt="Logo de http://ezetina.com" />
       </figure>
-      <nav>
+      <nav class="menu">
         <ol>
           <li>
-            <a href="#portfolio">Portafolio</a>
+            <a class="link" href="#portfolio">Portafolio</a>
           </li>
           <li>
-            <a href="#experience">Experiencia</a>
+            <a class="link" href="#experience">Experiencia</a>
           </li>
           <li>
-            <a href="#contact">Trabajemos juntos</a>
+            <a class="link" href="#contact">Trabajemos juntos</a>
           </li>
         </ol>
       </nav>
     </div>
   </header>
-  <section>
+  <section class="hero">
     <h1>
       Hola! <br> Soy <strong>Enrique Zetina</strong>
       <br> <strong>Developer</strong>
     </h1>
     <img src="img/hero.jpg" width="500" alt="Imagen principal">
   </section>
-  <section id="portfolio">
+  <section id="portfolio" class="portfolio">
     <h2>
       Portafolio (proyectos destacados)
     </h2>
-    <article>
-      <h3>
+    <article class="project">
+      <h3 class="project-tittle">
         Portafolio
       </h3>
-      <h6>React</h6>
-      <p><small><strong>Fecha: Enero 2019</strong></small></p>
-      <p><small><strong>URL: <strong>www.ezetina.com</strong></strong></small></p>
-      <p><small>Este portafolio fue desarrolado romando el cuerso basico
+      <h6 class="project-course">Spring</h6>
+      <p class="project-date"><small><strong>Fecha: Enero 2019</strong></small></p>
+      <p class="project-url"><small><strong>URL: <strong>www.ezetina.com</strong></strong></small></p>
+      <p class="project-desc"><small>Este portafolio fue desarrolado romando el cuerso basico
           de HTML que pertenece a la carrera de desarrolo WEB en Platzi, para
           mas informacion puedes consultar www.platzi.com
         </small></p>
-      <img src="img/platzi-scrum.jpg" width="500" alt="Curso SCRUM">
+        <figure class="project-imageContainer">
+            <img class="project-image" src="img/platzi-scrum.jpg" width="500" alt="Curso SCRUM">
+
+        </figure>
     </article>
   </section>
   <section id="experience">
     <h2>Mas sobre mi experiencia</h2>
-    <article>
-      <figure>
-        <img src="img/platzi-spring.jpg" width="500" />
+    <article class="experience">
+      <figure class="experience-imageContainer">
+        <img class="experience-image" src="img/platzi-spring.jpg" width="500" />
       </figure>
-      <h3>Platzi conf Mexico</h3>
-      <p><small>Platizo conf 2018 en Mexico</small></p>
-      <a href="https://github.com/ezetina86/" target="_blank">Ver proyectos</a>
+      <h3 class="experience-tittle">Platzi conf Mexico</h3>
+      <p class="experience-desc"><small>Platizo conf 2018 en Mexico</small></p>
+      <a class="experience-url" href="https://github.com/ezetina86/" target="_blank">Ver proyectos</a>
     </article>
   </section>
-  <section id="contact">Seccion Contacto
-    <form action="/suscripcion/">
-      <h3>Contactemos</h3>
-      <input type="text" name="" id="" placeholder="Dejame tu email">
-      <button>Enviar</button>
+  <section id="contact" class="contact">Seccion Contacto
+    <form action="/suscripcion/" class="contact-formEmail">
+      <h3 class="contact-tittle">Contactemos</h3>
+      <input type="text" name="" id="" placeholder="Dejame tu email" class="contact-input">
+      <button class="contact-buttonSend">Enviar</button>
     </form>
   </section>
-  <footer>Footer</footer>
+  <footer class="footer">Footer</footer>
 </body>
 
 </html>
