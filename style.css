@@ -1,3 +1,28 @@
+/*
+
+Implementacion de:
+    -reglas
+    -selectores
+    -declaraciones
+    -propiedades
+
+con CSS
+
+*/
+
+/* Selector de etiqueta */
 header{
-    background: #3498db !important;
+    background: #3498db;
+    color : #34495e
+}
+
+/*Seelctor de clase */
+.link{
+
+}
+
+/*Selector de etiqueta*/
+
+#portfolio{
+
 }
