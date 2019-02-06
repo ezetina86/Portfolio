@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Enrique Zetina</title>
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
-  </head>
-  <body>
-      <header>
-          <div>
-            <figure>
-              <img src="img/MyLogo.png" alt="Logo de http://ezetina.com" />
-            </figure>
-            <nav>
-              <ol>
-                <li>
-                  <a href="#">Portafolio</a>
-                </li>
-                <li>
-                  <a href="#">Experiencia</a>
-                </li>
-                <li>
-                  <a href="#">Trabajemos juntos</a>
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </header>
-    <section>
-      <h1>
-        Hola! <br> Soy <strong>Enrique Zetina</strong> 
-        <br> <strong>Developer</strong>
-      </h1>
-      <img src="img/hero.jpg" width="500"  alt="Imagen principal">
-    </section>
-    <section>
-        <h2>
-            Portafolio (proyectos destacados)
-          </h2>
-      <article>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Enrique Zetina</title>
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+</head>
+
+<body>
+  <header>
+    <div>
+      <figure>
+        <img src="img/MyLogo.png" alt="Logo de http://ezetina.com" />
+      </figure>
+      <nav>
+        <ol>
+          <li>
+            <a href="#portfolio">Portafolio</a>
+          </li>
+          <li>
+            <a href="#experience">Experiencia</a>
+          </li>
+          <li>
+            <a href="#contact">Trabajemos juntos</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <h1>
+      Hola! <br> Soy <strong>Enrique Zetina</strong>
+      <br> <strong>Developer</strong>
+    </h1>
+    <img src="img/hero.jpg" width="500" alt="Imagen principal">
+  </section>
+  <section id="portfolio">
+    <h2>
+      Portafolio (proyectos destacados)
+    </h2>
+    <article>
       <h3>
         Portafolio
       </h3>
       <h6>React</h6>
       <p><small><strong>Fecha: Enero 2019</strong></small></p>
       <p><small><strong>URL: <strong>www.ezetina.com</strong></strong></small></p>
-      <p><small>Este portafolio fue desarrolado  romando el cuerso basico
-        de HTML que pertenece a la carrera de desarrolo WEB en Platzi, para 
-        mas informacion puedes consultar www.platzi.com
-      </small></p>
+      <p><small>Este portafolio fue desarrolado romando el cuerso basico
+          de HTML que pertenece a la carrera de desarrolo WEB en Platzi, para
+          mas informacion puedes consultar www.platzi.com
+        </small></p>
       <img src="img/platzi-scrum.jpg" width="500" alt="Curso SCRUM">
-      </article>
-    </section>
-    <section>
-      <h2>Mas sobre mi experiencia</h2>
-      <article>
-        <figure>
-          <img src="img/platzi-spring.jpg" width="500"/>
-        </figure>
-        <h3>Platzi conf Mexico</h3>
-        <p><small>Platizo conf 2018 en mMxico</small></p>
-        <a href="">mirar</a>
-      </article>
-    </section>
-    <section>Seccion Contacto</section>
-    <form action="/suscripcion/"> 
+    </article>
+  </section>
+  <section id="experience">
+    <h2>Mas sobre mi experiencia</h2>
+    <article>
+      <figure>
+        <img src="img/platzi-spring.jpg" width="500" />
+      </figure>
+      <h3>Platzi conf Mexico</h3>
+      <p><small>Platizo conf 2018 en Mexico</small></p>
+      <a href="https://github.com/ezetina86/" target="_blank">Ver proyectos</a>
+    </article>
+  </section>
+  <section id="contact">Seccion Contacto
+    <form action="/suscripcion/">
       <h3>Contactemos</h3>
       <input type="text" name="" id="" placeholder="Dejame tu email">
       <button>Enviar</button>
     </form>
-    <footer>Footer</footer>
-  </body>
+  </section>
+  <footer>Footer</footer>
+</body>
+
 </html>
