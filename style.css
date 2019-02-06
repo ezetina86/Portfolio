@@ -25,6 +25,16 @@ h6{
     font-family: 'Fjalla One', sans-serif;
 }
 
+h1{
+    font-size: 40px;
+    line-height: 150%;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: -.2px;
+    text-transform: capitalize;
+    text-decoration: dashed;
+}
+
 /*Seelctor de clase */
 .link{
 
