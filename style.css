@@ -13,14 +13,50 @@ con CSS
 /* Selector de etiqueta */
 body{
     font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
 
 }
 
 .header{
+    height: 150px;
     background-color: #576574  ;
     /* color: Fuel tone*/
     color: #ff9f43;
     /* color: Double dragon skin*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    height: inherit;
+}
+
+ol, ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ 
+}
+.header ol{
+    height: inherit;
+    display: flex;
+   
+}
+
+.header ol li{
+    height: inherit;
+   
+}
+.header a{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+figure{
+    margin: 0;
 }
 
 .header a{
@@ -30,6 +66,7 @@ body{
 }
 
 .hero{
+    display: flex;
     height: 400px;
     background-image: url(img/hero.jpg);
     background-size: 30%;
@@ -53,6 +90,8 @@ h1{
     color: #feca57 ;
     /*text-transform: capitalize;
     text-decoration: dashed;*/
+    margin: 0;
+    align-items: center;
 }
 
 h1 strong{
@@ -60,11 +99,118 @@ h1 strong{
       /* color: Dark Mountian meadow*/
 }
 
+
+.portfolio{
+    background-color: #576574  ;
+    padding: 20px;
+}
+
+h2{
+  color: #10ac84;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+
+}
+
+.project{
+    border-color: #c8d6e5;
+     /* color: Light blue ballerina*/
+     border-width: 1px;
+     border-style: solid;
+     border-radius: 10px;
+     margin: 10px;
+     margin-bottom: 15px;
+     padding: 20px;
+     background: #c8d6e5;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+.project-tittle{
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .project-details{
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
 }
 .project-imageContainer{
-    width: 500px;
+    width: 300px;
+}
+
+.project-course, .project-date, .project-url{
+    margin: 10px 0;
+}
+
+.project-desc{
+    font-size: 20px;
+}
+
+.project strong{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.experience{
+    border-color: #c8d6e5;
+     /* color: Light blue ballerina*/
+     background-color: #576574  ;
+     border-width: 1px;
+     border-style: solid;
+     border-radius: 10px;
+     margin: 10px;
+     margin-bottom: 15px;
+     padding: 20px;
+     background: #c8d6e5;
+     box-sizing: border-box;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+}
+
+.contact-formEmail{
+    border-color: #c8d6e5;
+     /* color: Light blue ballerina*/
+     border-width: 1px;
+     border-style: solid;
+     border-radius: 10px;
+     background: #c8d6e5;
+
+}
+
+.flexbox{
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+}
+.box{
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    flex-shrink: 0;
+}
+
+.footer{
+    display: flex;
+    background-color: #576574;
+    color: #ff9f43;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.footer  img{
+    vertical-align: middle;
+}
+
+
+.footer  a{
+   color:  #ff9f43; 
 }
 
