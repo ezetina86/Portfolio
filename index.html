@@ -10,28 +10,28 @@
 </head>
 
 <body>
-    <header class="header">
-      <figure class="logo">
-        <img src="img/MyLogo.png" alt="Logo de http://ezetina.com"  height="200"/>
-      </figure>
-      <nav class="menu">
-        <ol>
-          <li>
-            <a class="link" href="#portfolio">Portafolio</a>
-          </li>
-          <li>
-            <a class="link" href="#experience">Experiencia</a>
-          </li>
-          <li>
-            <a class="link" href="#contact">Trabajemos juntos</a>
-          </li>
-        </ol>
-      </nav>
+  <header class="header">
+    <figure class="logo">
+      <img src="img/MyLogo.png" alt="Logo de http://ezetina.com" height="100" />
+    </figure>
+    <nav class="menu">
+      <ol>
+        <li>
+          <a class="link" href="#portfolio">Portafolio</a>
+        </li>
+        <li>
+          <a class="link" href="#experience">Experiencia</a>
+        </li>
+        <li>
+          <a class="link" href="#contact">Trabajemos juntos</a>
+        </li>
+      </ol>
+    </nav>
   </header>
   <section class="hero">
     <h1>
       Software
-      <br> 
+      <br>
       Developer
     </h1>
     <!--<img src="img/hero.jpg" width="500" alt="Imagen principal">-->
@@ -42,55 +42,87 @@
     </h2>
     <article class="project">
       <div class="project-details">
-          <h3 class="project-tittle">
-              Portafolio
-            </h3>
-            <h6 class="project-course">Spring</h6>
-            <p class="project-date"><small><strong>Fecha: Enero 2019</strong></small></p>
-            <p class="project-url"><small><strong>URL: <strong>www.ezetina.com</strong></strong></small></p>
-            <p class="project-desc"><small>Este portafolio fue desarrolado romando el cuerso basico
-                de HTML que pertenece a la carrera de desarrolo WEB en Platzi, para
-                mas informacion puedes consultar www.platzi.com
-              </small></p>
+        <h3 class="project-tittle">
+          Portafolio
+        </h3>
+        <h6 class="project-course">Spring</h6>
+        <p class="project-date"><small><strong>Fecha: Enero 2019</strong></small></p>
+        <p class="project-url"><small><strong>URL: <strong>www.ezetina.com</strong></strong></small></p>
+        <p class="project-desc"><small>Este portafolio fue desarrolado romando el cuerso basico
+            de HTML que pertenece a la carrera de desarrolo WEB en Platzi, para
+            mas informacion puedes consultar www.platzi.com
+          </small></p>
 
       </div>
-        <figure class="project-imageContainer">
-            <img class="project-image" src="img/platzi-scrum.jpg" width="300" alt="Curso SCRUM">
+      <figure class="project-imageContainer">
+        <img class="project-image" src="img/platzi-scrum.jpg" width="300" alt="Curso SCRUM">
 
-        </figure>
+      </figure>
     </article>
   </section>
-  <section id="experience">
-    <h2>Mas sobre mi experiencia
-    </h2>
-    <article class="experience">
-      <h3 class="experience-tittle">Platzi conf Mexico</h3>
-      <p class="experience-desc"><small>Platizo conf 2018 en Mexico</small></p>
-      
-      <figure class="experience-imageContainer">
-          <img class="experience-image" src="img/platzi-spring.jpg" width="300" />
-        </figure>
-        <br>
-        <a class="experience-url" href="https://github.com/ezetina86/" target="_blank">Ver proyectos</a>
+  <h2 class="exp-list-tittle">Mas acerca de mi...</h2>
+  <section id="experience" class="experience">
+    <article class="exp">
+      <figure class="exp-imageContainer">
+        <img src="img/platzi-spring.jpg" width="300" alt="Curso Spring">
+      </figure>
+      <div class="exp-detail">
+        <h3 class="exp-tittle">Curso JAVA with SPRING TOOLS and Hibernate</h3>
+        <p class="exp-description">Desarrollo de aplicaciones Java EE con Spring y Hibernate.
+          Construi una aplicación sobre un patrón MVC, con documentación de la API
+          y múltiples servicios de Spring Framework.</p>
+        <a class="exp-url" href="https://github.com/ezetina86/LearnJava/tree/master/Spring" target="_blank">GitHub</a>
+      </div>
+    </article>
+
+    <article class="exp">
+      <figure class="exp-imageContainer">
+        <img src="img/platzi-spring.jpg" width="300" alt="Curso Spring">
+      </figure>
+      <div class="exp-detail">
+        <h3 class="exp-tittle">Curso JAVA with SPRING TOOLS and Hibernate</h3>
+        <p class="exp-description">Desarrollo de aplicaciones Java EE con Spring y Hibernate.
+          Construi una aplicación sobre un patrón MVC, con documentación de la API
+          y múltiples servicios de Spring Framework.</p>
+        <a class="exp-url" href="https://github.com/ezetina86/LearnJava/tree/master/Spring" target="_blank">GitHub</a>
+      </div>
+    </article>
+
+    <article class="exp">
+      <figure class="exp-imageContainer">
+        <img src="img/platzi-spring.jpg" width="300" alt="Curso Spring">
+      </figure>
+      <div class="exp-detail">
+        <h3 class="exp-tittle">Curso JAVA with SPRING TOOLS and Hibernate</h3>
+        <p class="exp-description">Desarrollo de aplicaciones Java EE con Spring y Hibernate.
+          Construi una aplicación sobre un patrón MVC, con documentación de la API
+          y múltiples servicios de Spring Framework.</p>
+        <a class="exp-url" href="https://github.com/ezetina86/LearnJava/tree/master/Spring" target="_blank">GitHub</a>
+      </div>
     </article>
   </section>
-  <section id="contact">
-      <h2>Contacto
-        </h2>
+  <section id="contact" class="contact">
     <form action="/suscripcion/" class="contact-formEmail">
       <h3 class="contact-tittle">Escibeme</h3>
       <input type="text" name="" id="" placeholder="Dejame tu email" class="contact-input">
       <button class="contact-buttonSend">Enviar</button>
     </form>
+    <div class="social">
+      <a href="https://github.com/ezetina86" class="social-link-github" target="_blank"></a>
+      <a href="https://twitter.com/ezetina" class="social-link-twitter" target="_blank"></a>
+      <a href="https://www.instagram.com/ezetina/" class="social-link-instagram" target="_blank"></a>
+      <a href="https://www.facebook.com/ezetina" class="social-link-facebook" target="_blank"></a>
+
+    </div>
   </section>
   <footer class="footer">
     <div>
-      <p>Curso de desarrollo Web en Platzi <img src="img/Plogo.png"  width="100" alt="My logo"> </p>
+      <p>Curso de desarrollo Web en Platzi <img src="img/Plogo.png" width="100" alt="My logo"> </p>
     </div>
     <div>
-      <p>Powerd by <a href="https://twitter.com/ezetina" target="_blank">@ezetina</a></p> 
+      <p>Powerd by <a href="https://twitter.com/ezetina" target="_blank">@ezetina</a></p>
     </div>
-    
+
   </footer>
 </body>
 
