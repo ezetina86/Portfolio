@@ -13,6 +13,7 @@ con CSS
 /* Selector de etiqueta */
 
 body {
+    background-color: #576574;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 }
@@ -66,12 +67,25 @@ figure {
 
 .hero {
     display: flex;
-    height: 400px;
-    background-image: url(img/hero.jpg);
-    background-size: 30%;
-    background-repeat: no-repeat;
+    height: 500px;
+    /*background-image: url(img/hero.jpg);
+    background-size: 10%;
+    background-repeat: no-repeat;*/
     background-position-x: right;
     background-color: #576574;
+    justify-content: space-between;
+}
+
+.hero-image {
+    object-fit: cover;
+    /*filter: blur(5px);*/
+    /*transform: rotate(-90deg);*/
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #ff9f43;
+    -webkit-box-shadow: 0px 0px 15px 15px #ff9f43;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,6 +109,14 @@ h1 {
 h1 strong {
     color: #10ac84;
     /* color: Dark Mountian meadow*/
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
 }
 
 .portfolio {
@@ -120,7 +142,7 @@ h2 {
     border-radius: 10px;
     margin: 10px;
     margin-bottom: 15px;
-    padding: 20px;
+    padding: 40px;
     background: #c8d6e5;
     display: flex;
     align-items: center;
@@ -136,10 +158,28 @@ h2 {
 .project-details {
     width: 300px;
     height: 300px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .project-imageContainer {
-    width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    /*
+        object-fit: cover;
+    /*filter: blur(5px);*/
+    /*transform: rotate(-90deg);*/
+    /*
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #ff9f43;
+    -webkit-box-shadow: 0px 0px 15px 15px #ff9f43;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    */
+    
 }
 
 .project-course, .project-date, .project-url {
@@ -155,22 +195,8 @@ h2 {
 }
 
 .experience {
-    border-color: #c8d6e5;
-    /* color: Light blue ballerina*/
-    background-color: #576574;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 10px;
-    margin: 10px;
-    margin-bottom: 15px;
-    padding: 20px;
-    background: #c8d6e5;
-    box-sizing: border-box;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /*background-color: #576574  ;*/
-    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .experience- .contact-formEmail {
@@ -180,6 +206,10 @@ h2 {
     border-style: solid;
     border-radius: 10px;
     background: #c8d6e5;
+}
+
+.exp-imageContainer {
+    width: 300px;
 }
 
 .flexbox {
@@ -244,6 +274,8 @@ h2 {
 .exp-description {
     text-align: left;
     border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .exp-url {
@@ -330,3 +362,26 @@ h2 {
     background-image: url(img/facebook.svg);
     background-size: 50px;
 }
+
+.container {
+    /* border: 1px solid red; */
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff9f43 }
+  }
