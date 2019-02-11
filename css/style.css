@@ -113,10 +113,9 @@ h1 strong {
     border-right: .15em solid orange;
     white-space: nowrap;
     margin: 0 auto;
-    letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
 }
 
 .portfolio {
@@ -166,7 +165,6 @@ h2 {
     object-fit: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%;
-
     /*
         object-fit: cover;
     /*filter: blur(5px);*/
@@ -179,7 +177,6 @@ h2 {
     transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
     */
-    
 }
 
 .project-course, .project-date, .project-url {
@@ -375,13 +372,23 @@ h2 {
 }
 
 /* The typing effect */
+
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #ff9f43 }
-  }
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #ff9f43
+    }
+}
