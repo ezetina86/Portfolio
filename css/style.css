@@ -392,3 +392,39 @@ h2 {
         border-color: #ff9f43
     }
 }
+
+/*Media QUERY*/
+/*desktop first   big screen at top*/
+
+
+/*BreakPoint*/
+@media screen and (max-width:1024px) {
+    body {
+        border: 10px solid green;
+        
+    }
+}
+
+/*BreakPoint*/
+@media screen and (max-width:768px) {
+    body {
+        border: 10px solid blue;
+
+    }
+}
+
+/*BreakPoint*/
+@media screen and (max-width:480px) {
+    body {
+        border: 10px solid blueviolet;
+        
+    }
+}
+
+/*BreakPoint*/
+@media screen and (max-width:320px) {
+    body {
+        border: 10px solid orange;
+        
+    }
+}
