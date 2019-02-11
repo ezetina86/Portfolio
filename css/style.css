@@ -335,7 +335,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(/Portfolio/img/github.svg);
+    background-image: url(../img/github.svg);
     background-size: 50px;
 }
 
@@ -344,7 +344,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(/Portfolio/img/twitter.svg);
+    background-image: url(../img/twitter.svg);
     background-size: 50px;
 }
 
@@ -353,7 +353,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(/Portfolio/img/instagram.svg);
+    background-image: url(../img/instagram.svg);
     background-size: 50px;
 }
 
@@ -362,7 +362,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(/Portfolio/img/facebook.svg);
+    background-image: url(../img/facebook.svg);
     background-size: 50px;
 }
 
