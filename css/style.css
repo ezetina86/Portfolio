@@ -19,6 +19,7 @@ body {
 }
 
 .header {
+    flex-wrap: wrap;
     height: 150px;
     background-color: #576574;
     /* color: Fuel tone*/
@@ -66,6 +67,7 @@ figure {
 }
 
 .hero {
+    flex-wrap: wrap;
     display: flex;
     height: 500px;
     /*background-image: url(img/hero.jpg);
@@ -146,6 +148,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .project-tittle {
@@ -197,6 +200,7 @@ h2 {
 }
 
 .experience- .contact-formEmail {
+    max-width: 1000px;
     border-color: #c8d6e5;
     /* color: Light blue ballerina*/
     border-width: 1px;
@@ -228,6 +232,7 @@ h2 {
     color: #ff9f43;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img {
@@ -295,6 +300,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .contact-input {
@@ -329,7 +335,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(img/github.svg);
+    background-image: url(/Portfolio/img/github.svg);
     background-size: 50px;
 }
 
@@ -338,7 +344,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(img/twitter.svg);
+    background-image: url(/Portfolio/img/twitter.svg);
     background-size: 50px;
 }
 
@@ -347,7 +353,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(img/instagram.svg);
+    background-image: url(/Portfolio/img/instagram.svg);
     background-size: 50px;
 }
 
@@ -356,7 +362,7 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url(img/facebook.svg);
+    background-image: url(/Portfolio/img/facebook.svg);
     background-size: 50px;
 }
 
@@ -398,33 +404,34 @@ h2 {
 
 
 /*BreakPoint*/
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     body {
         border: 10px solid green;
         
     }
-}
+}*/
 
 /*BreakPoint*/
-@media screen and (max-width:768px) {
+/*@media screen and (max-width:768px) {
     body {
         border: 10px solid blue;
 
     }
-}
+}*/
 
 /*BreakPoint*/
-@media screen and (max-width:480px) {
+/*@media screen and (max-width:480px) {
     body {
         border: 10px solid blueviolet;
         
     }
-}
+}*/
 
 /*BreakPoint*/
-@media screen and (max-width:320px) {
+/*@media screen and (max-width:320px) {
     body {
         border: 10px solid orange;
         
     }
-}
+}*/
+
