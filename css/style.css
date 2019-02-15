@@ -136,11 +136,9 @@ h2 {
 }
 
 .project {
-    border-width: 1px;
+    border: 1px solid gray;
     border-radius: 10px;
-    border-color: #c8d6e5;
     margin-bottom: 15px;
-    /* color: Light blue ballerina*/
     padding: 20px;
     background: #c8d6e5;
     display: flex;
@@ -167,12 +165,12 @@ h2 {
     max-width: 100%;
 }
 
-.project-course, .project-date, .project-url {
-    margin: 10px 0;
-}
-
 .project-desc {
     font-size: 20px;
+}
+
+.project-details {
+    width: 50%;
 }
 
 .project strong {
@@ -181,11 +179,6 @@ h2 {
 
 .project-details {
     width: 50%;
-}
-
-.experience {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .contact .contact-formEmail {
@@ -228,14 +221,9 @@ h2 {
     color: #ff9f43;
 }
 
-.experience {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .exp {
-    margin: 1%px;
-    width: 48%px;
+    margin: 1%;
+    /*width: 48%;*/
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -244,18 +232,25 @@ h2 {
 }
 
 .exp img {
-    width: 480px;
-    height: 200px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    /*width: 480px;
+    height: 200px;*/
+    max-width: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .exp-detail {
     background-color: #576574;
     margin: 20px 40px;
-    margin-top: -40px;
+    /*margin-top: -40px;*/
     position: relative;
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .exp-description {
@@ -271,9 +266,14 @@ h2 {
 }
 
 .exp-list-tittle {
-    margin-left: 15px;
+    margin-left: 20px;
     background-color: #576574;
 }
+
+/*.exp-list{
+    display: flex;
+      flex-wrap: wrap;
+    }*/
 
 .contact {
     background-color: #576574;
@@ -389,7 +389,7 @@ h2 {
 
 /*BreakPoint*/
 
-@media screen and (max-width:1024px) {}
+@media screen and (max-width:1023px) {}
 
 /*BreakPoint*/
 
@@ -407,6 +407,10 @@ h2 {
     }
     .header a {
         justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
     }
     .header .logo {
         text-align: center;
@@ -415,7 +419,8 @@ h2 {
         display: block;
     }
     .project-imageContainer {
-        width: auto;
+        max-width: 100%;
+        height: auto;
         text-align: center;
     }
     .project-details {
@@ -425,7 +430,7 @@ h2 {
     .project-course, .project-date, .project-url {
         margin: .3em 0;
     }
-    .project-tittle {
+    .project-title {
         font-size: 1.5em;
         margin-bottom: .3em;
     }
@@ -438,7 +443,7 @@ h2 {
     .project-date {
         font-size: 1em;
     }
-    .project-description {
+    .project-desc {
         font-size: 1em;
     }
     .exp {
@@ -446,8 +451,9 @@ h2 {
         flex-shrink: initial;
     }
     .exp img {
-        width: 100%;
-        object-fit: cover;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
     }
 }
 
@@ -459,8 +465,8 @@ h2 {
     }
     .exp-detail {
         /* 1em = 16px */
-        margin: -2em .5em .5em;
-        padding: 1em;
+        margin: -.5em .5em .5em;
+        padding: 1.2em;
     }
 }
 
