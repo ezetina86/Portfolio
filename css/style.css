@@ -13,7 +13,7 @@ con CSS
 /* Selector de etiqueta */
 
 body {
-    background-color: #576574;
+    background-color: white;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 }
@@ -21,9 +21,9 @@ body {
 .header {
     flex-wrap: wrap;
     height: 150px;
-    background-color: #576574;
+    background-color: white;
     /* color: Fuel tone*/
-    color: #ff9f43;
+    color: #0066a1;
     /* color: Double dragon skin*/
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,7 @@ figure {
 }
 
 .header a {
-    color: #ff9f43;
+    color: #0066a1;
     /* color: Double dragon skin*/
     text-decoration: none;
 }
@@ -74,7 +74,7 @@ figure {
     background-size: 10%;
     background-repeat: no-repeat;*/
     background-position-x: right;
-    background-color: #576574;
+    background-color: white;
     justify-content: space-between;
 }
 
@@ -84,8 +84,8 @@ figure {
     /*transform: rotate(-90deg);*/
     border-radius: 50%;
     -webkit-border-radius: 50%;
-    box-shadow: 0px 0px 15px 15px #ff9f43;
-    -webkit-box-shadow: 0px 0px 15px 15px #ff9f43;
+    box-shadow: 0px 0px 15px 15px #0066a1;
+    -webkit-box-shadow: 0px 0px 15px 15px #0066a1;
     transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
 }
@@ -109,7 +109,7 @@ h1 {
 }
 
 h1 strong {
-    color: #10ac84;
+    color: #00b2a9;
     /* color: Dark Mountian meadow*/
     overflow: hidden;
     border-right: .15em solid orange;
@@ -121,13 +121,13 @@ h1 strong {
 }
 
 .portfolio {
-    background-color: #576574;
+    background-color: white;
     padding: 20px;
 }
 
 h2 {
-    background-color: #576574;
-    color: #10ac84;
+    background-color: white;
+    color: #00b2a9;
     text-transform: uppercase;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
@@ -136,11 +136,11 @@ h2 {
 }
 
 .project {
-    border: 1px solid gray;
+    border: 1px solid white;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 20px;
-    background: #c8d6e5;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,18 +177,14 @@ h2 {
     font-family: 'Fjalla One', sans-serif;
 }
 
-.project-details {
-    width: 50%;
-}
-
 .contact .contact-formEmail {
     max-width: 1000px;
-    border-color: #c8d6e5;
+    border-color: white;
     /* color: Light blue ballerina*/
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
-    background: #c8d6e5;
+    background: white;
 }
 
 .flexbox {
@@ -206,8 +202,8 @@ h2 {
 
 .footer {
     display: flex;
-    background-color: #576574;
-    color: #ff9f43;
+    background-color: white;
+    color: #0066a1;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -218,7 +214,7 @@ h2 {
 }
 
 .footer a {
-    color: #ff9f43;
+    color: #0066a1;
 }
 
 .exp {
@@ -227,8 +223,8 @@ h2 {
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #c8d6e5;
-    color: #ff9f43;
+    background-color: white;
+    color: #0066a1;
 }
 
 .exp img {
@@ -244,8 +240,8 @@ h2 {
 }
 
 .exp-detail {
-    background-color: #576574;
-    margin: 20px 40px;
+    background-color: white;
+    margin: 10px 40px;
     /*margin-top: -40px;*/
     position: relative;
     padding: 20px;
@@ -258,25 +254,26 @@ h2 {
 }
 
 .exp-url {
-    border: 1px solid #c8d6e5;
+    border: 1px solid white;
     padding: 5px 20px;
     text-decoration: none;
-    color: #c8d6e5;
+    color: white;
     border-radius: 5px;
 }
 
 .exp-list-tittle {
     margin-left: 20px;
-    background-color: #576574;
+    background-color: white;
 }
 
-/*.exp-list{
+.exp-list{
     display: flex;
       flex-wrap: wrap;
-    }*/
+      padding: 20px;
+    }
 
 .contact {
-    background-color: #576574;
+    background-color: white;
     color: white;
     height: 150px;
     display: flex;
@@ -286,7 +283,7 @@ h2 {
 }
 
 .contact-input {
-    border-color: #c8d6e5;
+    border-color: white;
     border-radius: 5px;
     border-style: solid;
     padding: 1px 1px 1px 30px;
@@ -349,7 +346,7 @@ h2 {
 }
 
 .container {
-    /* border: 1px solid red; */
+     /*border: 1px solid red; */
     width: 1000px;
     /*width: 100%;*/
     flex: 1;
@@ -379,7 +376,7 @@ h2 {
         border-color: transparent
     }
     50% {
-        border-color: #ff9f43
+        border-color: #0066a1
     }
 }
 
