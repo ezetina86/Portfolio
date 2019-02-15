@@ -136,19 +136,21 @@ h2 {
 }
 
 .project {
-    border-color: #c8d6e5;
-    /* color: Light blue ballerina*/
     border-width: 1px;
-    border-style: solid;
     border-radius: 10px;
-    margin: 10px;
+    border-color: #c8d6e5;
     margin-bottom: 15px;
-    padding: 40px;
+    /* color: Light blue ballerina*/
+    padding: 20px;
     background: #c8d6e5;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.project-course .project-date .project-url {
+    margin: 10px 0;
 }
 
 .project-tittle {
@@ -157,29 +159,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-.project-details {
-    width: 300px;
-    height: 300px;
-    align-items: center;
-    justify-content: space-between;
+.project-imageContainer {
+    max-width: 50%;
 }
 
-.project-imageContainer {
-    object-fit: cover;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    /*
-        object-fit: cover;
-    /*filter: blur(5px);*/
-    /*transform: rotate(-90deg);*/
-    /*
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    box-shadow: 0px 0px 15px 15px #ff9f43;
-    -webkit-box-shadow: 0px 0px 15px 15px #ff9f43;
-    transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
-    */
+.project-imageContainer img {
+    max-width: 100%;
 }
 
 .project-course, .project-date, .project-url {
@@ -194,12 +179,16 @@ h2 {
     font-family: 'Fjalla One', sans-serif;
 }
 
+.project-details {
+    width: 50%;
+}
+
 .experience {
     display: flex;
     flex-wrap: wrap;
 }
 
-.experience- .contact-formEmail {
+.contact .contact-formEmail {
     max-width: 1000px;
     border-color: #c8d6e5;
     /* color: Light blue ballerina*/
@@ -207,10 +196,6 @@ h2 {
     border-style: solid;
     border-radius: 10px;
     background: #c8d6e5;
-}
-
-.exp-imageContainer {
-    width: 300px;
 }
 
 .flexbox {
@@ -245,11 +230,12 @@ h2 {
 
 .experience {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .exp {
-    margin: 10px;
-    width: 480px;
+    margin: 1%px;
+    width: 48%px;
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -258,10 +244,9 @@ h2 {
 }
 
 .exp img {
-    width: 480;
-    height: 200;
+    width: 480px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .exp-detail {
@@ -275,9 +260,6 @@ h2 {
 
 .exp-description {
     text-align: left;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .exp-url {
@@ -369,6 +351,8 @@ h2 {
 .container {
     /* border: 1px solid red; */
     width: 1000px;
+    /*width: 100%;*/
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -400,38 +384,86 @@ h2 {
 }
 
 /*Media QUERY*/
+
 /*desktop first   big screen at top*/
 
+/*BreakPoint*/
+
+@media screen and (max-width:1024px) {}
 
 /*BreakPoint*/
-/*@media screen and (max-width:1024px) {
-    body {
-        border: 10px solid green;
-        
+
+@media screen and (max-width:767px) {
+    /*Ipad resolution*/
+    .header {
+        display: block;
+        height: auto;
     }
-}*/
+    .header ol {
+        display: block;
+    }
+    .header ol li {
+        height: 50px;
+    }
+    .header a {
+        justify-content: center;
+    }
+    .header .logo {
+        text-align: center;
+    }
+    .project {
+        display: block;
+    }
+    .project-imageContainer {
+        width: auto;
+        text-align: center;
+    }
+    .project-details {
+        width: auto;
+        /* font-size: 10px; */
+    }
+    .project-course, .project-date, .project-url {
+        margin: .3em 0;
+    }
+    .project-tittle {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+    .project-url {
+        font-size: 1em;
+    }
+    .project-course {
+        font-size: .7em;
+    }
+    .project-date {
+        font-size: 1em;
+    }
+    .project-description {
+        font-size: 1em;
+    }
+    .exp {
+        width: auto;
+        flex-shrink: initial;
+    }
+    .exp img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
 
 /*BreakPoint*/
-/*@media screen and (max-width:768px) {
-    body {
-        border: 10px solid blue;
 
+@media screen and (max-width:480px) {
+    .project-details {
+        font-size: 14px;
     }
-}*/
+    .exp-detail {
+        /* 1em = 16px */
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+}
 
 /*BreakPoint*/
-/*@media screen and (max-width:480px) {
-    body {
-        border: 10px solid blueviolet;
-        
-    }
-}*/
 
-/*BreakPoint*/
-/*@media screen and (max-width:320px) {
-    body {
-        border: 10px solid orange;
-        
-    }
-}*/
-
+@media screen and (max-width:320px) {}
