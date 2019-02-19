@@ -12,8 +12,50 @@ con CSS
 
 /* Selector de etiqueta */
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?jawe7r');
+    src: url('../fonts/icomoon.eot?jawe7r#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?jawe7r') format('truetype'), url('../fonts/icomoon.woff?jawe7r') format('woff'), url('../fonts/icomoon.svg?jawe7r#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+    content: "\e900";
+}
+
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background:rgba(0,0,0,.8);
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    color: white;
+    display: none;
+
+}
+
 body {
-    background-color: black;
+    background-color: white;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 }
@@ -21,7 +63,7 @@ body {
 .header {
     flex-wrap: wrap;
     height: 150px;
-    background-color: black;
+    background-color: white;
     /* color: Fuel tone*/
     color: #0066a1;
     /* color: Double dragon skin*/
@@ -74,20 +116,15 @@ figure {
     background-size: 10%;
     background-repeat: no-repeat;*/
     background-position-x: right;
-    background-color: black;
+    background-color: white;
     justify-content: space-between;
 }
 
 .hero-image {
-    object-fit: cover;
-    /*filter: blur(5px);*/
-    /*transform: rotate(-90deg);*/
+    max-height: 100%;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
     box-shadow: 0px 0px 15px 15px #0066a1;
-    -webkit-box-shadow: 0px 0px 15px 15px #0066a1;
     transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,7 +150,6 @@ h1 strong {
     /* color: Dark Mountian meadow*/
     overflow: hidden;
     border-right: .15em solid orange;
-    black-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
     /* Adjust as needed */
@@ -121,12 +157,12 @@ h1 strong {
 }
 
 .portfolio {
-    background-color: black;
-    padding: 20px;
+    background-color: white;
+    padding: 2em;
 }
 
 h2 {
-    background-color: black;
+    background-color: white;
     color: #00b2a9;
     text-transform: uppercase;
     font-family: 'Source Sans Pro', sans-serif;
@@ -136,11 +172,11 @@ h2 {
 }
 
 .project {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 20px;
-    background: black;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,6 +203,8 @@ h2 {
 
 .project-desc {
     font-size: 20px;
+    color: #0066a1;
+    padding: 2em;
 }
 
 .project-details {
@@ -179,12 +217,12 @@ h2 {
 
 .contact .contact-formEmail {
     max-width: 1000px;
-    border-color: black;
+    border-color: white;
     /* color: Light blue ballerina*/
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
-    background: black;
+    background: white;
 }
 
 .flexbox {
@@ -202,7 +240,7 @@ h2 {
 
 .footer {
     display: flex;
-    background-color: black;
+    background-color: white;
     color: #0066a1;
     align-items: center;
     justify-content: space-between;
@@ -223,7 +261,7 @@ h2 {
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
-    background-color: black;
+    background-color: white;
     color: #0066a1;
 }
 
@@ -240,7 +278,7 @@ h2 {
 }
 
 .exp-detail {
-    background-color: black;
+    background-color: white;
     margin: 10px 40px;
     /*margin-top: -40px;*/
     position: relative;
@@ -254,16 +292,16 @@ h2 {
 }
 
 .exp-url {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 5px 20px;
     text-decoration: none;
-    color: black;
+    color: white;
     border-radius: 5px;
 }
 
 .exp-list-tittle {
     margin-left: 20px;
-    background-color: black;
+    background-color: white;
 }
 
 .exp-list {
@@ -273,8 +311,8 @@ h2 {
 }
 
 .contact {
-    background-color: black;
-    color: black;
+    background-color: white;
+    color: white;
     height: 150px;
     display: flex;
     align-items: center;
@@ -283,7 +321,7 @@ h2 {
 }
 
 .contact-input {
-    border-color: black;
+    border-color: white;
     border-radius: 5px;
     border-style: solid;
     padding: 1px 1px 1px 30px;
@@ -298,7 +336,7 @@ h2 {
     display: block;
     margin-top: 10px;
     background: 0 auto;
-    color: black;
+    color: white;
     width: 100px;
     border-radius: 5px;
     padding: 5px 0;
@@ -390,12 +428,59 @@ h2 {
     .container {
         padding: 0 1em;
     }
+    .hero {
+        position: relative;
+        height: auto;
+        padding: 2em;
+    }
+    h1 {
+        font-size: 2em;
+        z-index: 2;
+    }
+    .hero-image {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.HTML-video {
+    max-width: 100%;
+    height: auto;
+    margin: auto auto;
+    display: block;
+    position: relative;
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-video {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
 }
 
 /*BreakPoint*/
 
 @media screen and (max-width:767px) {
     /*Ipad resolution*/
+.burger-button{
+    display: block;
+}
+
+    .hero-image {
+        top: 5em;
+        left: 25em;
+        margin-top: 5em;
+    }
     .header {
         display: block;
         height: auto;
@@ -461,6 +546,9 @@ h2 {
 /*BreakPoint*/
 
 @media screen and (max-width:480px) {
+    h1 {
+        font-size: 1em;
+    }
     .project-details {
         font-size: 14px;
     }
