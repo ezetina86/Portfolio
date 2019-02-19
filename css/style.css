@@ -13,7 +13,7 @@ con CSS
 /* Selector de etiqueta */
 
 body {
-    background-color: white;
+    background-color: black;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 }
@@ -21,7 +21,7 @@ body {
 .header {
     flex-wrap: wrap;
     height: 150px;
-    background-color: white;
+    background-color: black;
     /* color: Fuel tone*/
     color: #0066a1;
     /* color: Double dragon skin*/
@@ -74,7 +74,7 @@ figure {
     background-size: 10%;
     background-repeat: no-repeat;*/
     background-position-x: right;
-    background-color: white;
+    background-color: black;
     justify-content: space-between;
 }
 
@@ -113,7 +113,7 @@ h1 strong {
     /* color: Dark Mountian meadow*/
     overflow: hidden;
     border-right: .15em solid orange;
-    white-space: nowrap;
+    black-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
     /* Adjust as needed */
@@ -121,12 +121,12 @@ h1 strong {
 }
 
 .portfolio {
-    background-color: white;
+    background-color: black;
     padding: 20px;
 }
 
 h2 {
-    background-color: white;
+    background-color: black;
     color: #00b2a9;
     text-transform: uppercase;
     font-family: 'Source Sans Pro', sans-serif;
@@ -136,11 +136,11 @@ h2 {
 }
 
 .project {
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 20px;
-    background: white;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -179,12 +179,12 @@ h2 {
 
 .contact .contact-formEmail {
     max-width: 1000px;
-    border-color: white;
+    border-color: black;
     /* color: Light blue ballerina*/
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
-    background: white;
+    background: black;
 }
 
 .flexbox {
@@ -202,7 +202,7 @@ h2 {
 
 .footer {
     display: flex;
-    background-color: white;
+    background-color: black;
     color: #0066a1;
     align-items: center;
     justify-content: space-between;
@@ -223,7 +223,7 @@ h2 {
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
-    background-color: white;
+    background-color: black;
     color: #0066a1;
 }
 
@@ -240,7 +240,7 @@ h2 {
 }
 
 .exp-detail {
-    background-color: white;
+    background-color: black;
     margin: 10px 40px;
     /*margin-top: -40px;*/
     position: relative;
@@ -254,27 +254,27 @@ h2 {
 }
 
 .exp-url {
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 5px 20px;
     text-decoration: none;
-    color: white;
+    color: black;
     border-radius: 5px;
 }
 
 .exp-list-tittle {
     margin-left: 20px;
-    background-color: white;
+    background-color: black;
 }
 
-.exp-list{
+.exp-list {
     display: flex;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
+    flex-wrap: wrap;
+    padding: 20px;
+}
 
 .contact {
-    background-color: white;
-    color: white;
+    background-color: black;
+    color: black;
     height: 150px;
     display: flex;
     align-items: center;
@@ -283,7 +283,7 @@ h2 {
 }
 
 .contact-input {
-    border-color: white;
+    border-color: black;
     border-radius: 5px;
     border-style: solid;
     padding: 1px 1px 1px 30px;
@@ -298,7 +298,7 @@ h2 {
     display: block;
     margin-top: 10px;
     background: 0 auto;
-    color: white;
+    color: black;
     width: 100px;
     border-radius: 5px;
     padding: 5px 0;
@@ -346,7 +346,7 @@ h2 {
 }
 
 .container {
-     /*border: 1px solid red; */
+    /*border: 1px solid red; */
     width: 1000px;
     /*width: 100%;*/
     flex: 1;
@@ -386,7 +386,11 @@ h2 {
 
 /*BreakPoint*/
 
-@media screen and (max-width:1023px) {}
+@media screen and (max-width:1023px) {
+    .container {
+        padding: 0 1em;
+    }
+}
 
 /*BreakPoint*/
 
@@ -464,6 +468,23 @@ h2 {
         /* 1em = 16px */
         margin: -.5em .5em .5em;
         padding: 1.2em;
+    }
+    .contact {
+        height: auto;
+        padding: 1.5em 0;
+        text-align: center;
+        display: block;
+    }
+    .contact-formEmail button {
+        margin: 1em auto;
+    }
+    .contact-formEmail h3 {
+        margin-top: 0;
+    }
+    .footer {
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
     }
 }
 
