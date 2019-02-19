@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <i class="icon-menu burger-button"></i>
+  <i class="icon-menu burger-button" id="burger-menu"></i>
   <header class="header">
     <div class="container">
       <figure class="logo">
@@ -24,7 +24,7 @@
             <a class="link" href="#portfolio">Acerca de mi ...</a>
           </li>
           <li>
-            <a class="link" href="#experience">Platzi </a>
+            <a class="link" href="#experience">Experiencia </a>
           </li>
           <li>
             <a class="link" href="#contact">Contacto</a>
@@ -167,5 +167,22 @@
   </footer>
   <!-- Se acaba mi comentario -->
 </body>
+
+<script>
+
+  const menu = document.querySelector('.menu');
+  const burgerButton = document.querySelector('#burger-menu');
+  function hideShow() {
+    if (menu.classList.contains('is-active')) {
+      menu.classList.remove('is-active');
+    } else {
+      menu.classList.add('is-active');
+    }
+  }
+
+  burgerButton.addEventListener('click', hideShow);
+
+</script>
+
 
 </html>

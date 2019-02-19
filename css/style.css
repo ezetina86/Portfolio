@@ -42,7 +42,7 @@ con CSS
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background:rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     display: block;
     line-height: 40px;
     text-align: center;
@@ -51,7 +51,6 @@ con CSS
     left: 5px;
     color: white;
     display: none;
-
 }
 
 body {
@@ -470,12 +469,11 @@ h2 {
 
 /*BreakPoint*/
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     /*Ipad resolution*/
-.burger-button{
-    display: block;
-}
-
+    .burger-button {
+        display: block;
+    }
     .hero-image {
         top: 5em;
         left: 25em;
@@ -500,6 +498,24 @@ h2 {
     }
     .header .logo {
         text-align: center;
+    }
+    .menu {
+        position: fixed;
+        background: rgba(0, 0, 0, .7);
+        z-index: 3;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        /* height: 100vh; */
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+
+    }
+    .menu.is-active {
+        left: 0;
     }
     .project {
         display: block;
@@ -541,41 +557,37 @@ h2 {
         height: auto;
         margin: auto;
     }
-}
-
-/*BreakPoint*/
-
-@media screen and (max-width:480px) {
-    h1 {
-        font-size: 1em;
+}   
+    /*BreakPoint*/
+    @media screen and (max-width:480px) {
+        h1 {
+            font-size: 1em;
+        }
+        .project-details {
+            font-size: 14px;
+        }
+        .exp-detail {
+            /* 1em = 16px */
+            margin: -.5em .5em .5em;
+            padding: 1.2em;
+        }
+        .contact {
+            height: auto;
+            padding: 1.5em 0;
+            text-align: center;
+            display: block;
+        }
+        .contact-formEmail button {
+            margin: 1em auto;
+        }
+        .contact-formEmail h3 {
+            margin-top: 0;
+        }
+        .footer {
+            display: block;
+            text-align: center;
+            border: 1px solid transparent;
+        }
     }
-    .project-details {
-        font-size: 14px;
-    }
-    .exp-detail {
-        /* 1em = 16px */
-        margin: -.5em .5em .5em;
-        padding: 1.2em;
-    }
-    .contact {
-        height: auto;
-        padding: 1.5em 0;
-        text-align: center;
-        display: block;
-    }
-    .contact-formEmail button {
-        margin: 1em auto;
-    }
-    .contact-formEmail h3 {
-        margin-top: 0;
-    }
-    .footer {
-        display: block;
-        text-align: center;
-        border: 1px solid transparent;
-    }
-}
-
-/*BreakPoint*/
-
-@media screen and (max-width:320px) {}
+    /*BreakPoint*/
+    @media screen and (max-width:320px) {}
