@@ -519,6 +519,10 @@ a {
   width: 70%;
 }
 
+.aws {
+  width: 70%;
+}
+
 .java {
   width: 50%;
 }
@@ -643,7 +647,7 @@ a {
   border-radius: 10px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 696px) {
   .img-container {
     width: 100%;
   }
