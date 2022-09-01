@@ -4,8 +4,8 @@
 
 // init Isotope
   var $grid = $('.img-grid').isotope({
-    itemSelector: '.img-container',
-    //layoutMode: 'fitRows',
+    //itemSelector: '.img-container',
+    layoutMode: 'fitRows',
   });
 
   // filter functions
