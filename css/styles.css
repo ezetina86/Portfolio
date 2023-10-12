@@ -523,23 +523,23 @@ a {
 }
 
 .gcp {
-  width: 80%;
+  width: 90%;
 }
 
-.azure {
-  width: 70%;
+.devops {
+  width: 80%;
 }
 
 .aws {
   width: 70%;
 }
 
-.java {
+.azure {
   width: 50%;
 }
 
-.web {
-  width: 40%;
+.python {
+  width: 50%;
 }
 
 .bigdata {
@@ -828,4 +828,54 @@ footer {
   background: #111;
   padding: 12px 0 12px 0;
   text-align: center;
+}
+
+/***********************************FORM STYLES***********************************/
+.custom-form {
+  max-width: 400px; /* adjust as per your design */
+  margin: 0 auto;   /* centers the form in a container */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.custom-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+.custom-form input[type="email"], 
+.custom-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.custom-form button {
+  padding: 10px 20px;
+  background-color: #ce181e; /* blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.custom-form button:hover {
+  background-color: #ce181e; /* darker blue */
+}
+
+
+/***********************************IMAGE FOOT STYLES***********************************/
+.img-container .overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  color: #fff;
+  background-color: rgba(0,0,0,0.7); /* adjust the background as per your needs */
+}
+
+.img-container:hover .overlay-text {
+  visibility: visible;
 }
