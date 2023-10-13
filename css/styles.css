@@ -20,6 +20,28 @@ img {
   margin: auto;
   padding-top: 80px;
   padding-bottom: 80px;
+  margin: 0 auto;
+}
+
+.img-grid {
+  display: flex;
+  flex-wrap: wrap; /* This will allow items to wrap onto the next line if they don't fit */
+  justify-content: center; /* This will center items horizontally */
+  align-items: center; /* This will center items vertically */
+}
+
+.img-grid-projects {
+  display: flex;
+  flex-wrap: wrap; /* This will allow items to wrap onto the next line if they don't fit */
+  justify-content: center; /* This will center items horizontally */
+  align-items: center; /* This will center items vertically */
+}
+
+.img-container {
+  /* ... other styles ... */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /***********************************UNIVERSAL STYLES***********************************/
@@ -878,4 +900,23 @@ footer {
 
 .img-container:hover .overlay-text {
   visibility: visible;
+}
+
+/***********************************IMAGE CLIENTS STYLES***********************************/
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+  gap: 1rem; /* space between images */
+  justify-items: center; /* center images horizontally */
+  align-items: center;
+}
+
+.image-grid img {
+  max-width: 150px;
+  filter: grayscale(100%); /* convert images to grayscale */
+}
+
+.image-grid img[src='img/epam.png'] {
+  filter: none; /* remove the grayscale effect */
 }
