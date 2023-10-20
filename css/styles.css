@@ -35,6 +35,7 @@ img {
   flex-wrap: wrap; /* This will allow items to wrap onto the next line if they don't fit */
   justify-content: center; /* This will center items horizontally */
   align-items: center; /* This will center items vertically */
+  text-align: left;
 }
 
 .img-container {
@@ -42,6 +43,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 /***********************************UNIVERSAL STYLES***********************************/
