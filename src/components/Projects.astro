@@ -1,0 +1,69 @@
+---
+import { projects, categories } from '../data/projects.js';
+---
+
+<section id="projects" class="py-20 sm:py-32 animate-on-scroll">
+  <div class="container mx-auto px-8">
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Projects</h2>
+
+    <div class="mt-12 flex justify-center items-center gap-2 sm:gap-4 animate-on-scroll" id="project-filters">
+      {categories.map(category => (
+        <button
+          class="filter-btn capitalize bg-gray-800 text-gray-300 py-2 px-4 rounded-md text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white"
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <div id="project-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+      {projects.map((project, index) => (
+        <div class="project-card bg-base-bg p-6 rounded-lg shadow-lg border border-gray-700/50 flex flex-col animate-on-scroll" data-category={project.category} style={`--stagger-index: ${index};`}>
+          <img src={project.image} alt={project.title} class="rounded-md h-48 w-full object-cover mb-4">
+          <h3 class="text-xl font-bold font-heading text-primary">{project.title}</h3>
+          <div class="flex flex-wrap gap-2 mt-2">
+            {project.tags.map(tag => (
+              <span class="bg-gray-700 text-gray-300 py-1 px-2 rounded-md text-xs font-medium">{tag}</span>
+            ))}
+          </div>
+          <p class="text-gray-400 mt-4 flex-grow">{project.description}</p>
+          <div class="mt-6 flex justify-end gap-4">
+            {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors">GitHub</a>}
+            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors">Live Demo</a>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const filterButtons = document.querySelectorAll('#project-filters .filter-btn');
+  const projectCards = document.querySelectorAll('#project-grid .project-card');
+
+  // Set initial active button
+  if (filterButtons.length > 0) {
+    filterButtons[0].classList.add('bg-primary', 'text-white');
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active button style
+      filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+      button.classList.add('bg-primary', 'text-white');
+
+      const category = button.getAttribute('data-category');
+
+      projectCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardElement = card as HTMLElement;
+        if (category === 'All' || cardCategory === category) {
+          cardElement.style.display = 'flex';
+        } else {
+          cardElement.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

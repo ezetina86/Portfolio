@@ -1,0 +1,69 @@
+---
+import { experiences } from '../data/experience.js';
+---
+
+<section id="experience" class="py-20 sm:py-32 animate-on-scroll">
+  <div class="container mx-auto px-8">
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Work Experience</h2>
+    <div class="mt-16 relative timeline-container">
+      <!-- Timeline line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700 timeline-line"></div>
+
+      {experiences.map((exp, index) => (
+        <div class={`timeline-item flex items-center w-full mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+          <div class="timeline-content w-1/2 animate-on-scroll">
+            <div class="bg-base-bg p-6 rounded-lg shadow-lg border border-gray-700/50 transition-all duration-300 hover:border-primary hover:shadow-primary/20">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2">
+                <h3 class="text-xl font-bold font-heading text-primary">{exp.role}</h3>
+                <span class="text-sm text-gray-400 mt-1 sm:mt-0">{exp.period}</span>
+              </div>
+              <div class="flex items-center mb-4">
+                
+                <h4 class="text-lg font-semibold text-secondary">{exp.company}</h4>
+              </div>
+              <p class="text-gray-400">{exp.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-item:nth-child(odd) .timeline-content {
+    padding-left: 2rem;
+  }
+  .timeline-item:nth-child(even) .timeline-content {
+    padding-right: 2rem;
+    text-align: right;
+  }
+  .timeline-item:nth-child(even) .timeline-content .justify-between {
+    flex-direction: row-reverse;
+  }
+   .timeline-item:nth-child(even) .timeline-content .items-center {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: 1rem;
+    }
+    .timeline-item {
+      justify-content: flex-start !important;
+    }
+    .timeline-item .timeline-content {
+      width: 100%;
+      padding-left: 3rem !important;
+      padding-right: 0 !important;
+      text-align: left !important;
+    }
+    .timeline-item:nth-child(even) .timeline-content .justify-between {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .timeline-item:nth-child(even) .timeline-content .items-center {
+      justify-content: flex-start;
+    }
+  }
+</style>
