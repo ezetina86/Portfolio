@@ -107,5 +107,5 @@ Distributed under the MIT License. See `LICENSE` for more information. (Note: Yo
 
 ## Contact
 
-Your Name - [Your Email](mailto:jenzetin@gmail.com
+Enrique Zetina - [jenzetin@gmail.com](mailto:jenzetin@gmail.com)
 Project Link: [https://github.com/your_username/your_portfolio](https://github.com/ezetina86/Portfolio)
