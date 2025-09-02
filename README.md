@@ -1,5 +1,7 @@
 # My Personal Portfolio
 
+![Deploy Status](https://github.com/ezetina86/Portfolio/actions/workflows/deploy.yml/badge.svg)
+
 This is a personal portfolio website built with Astro, designed to showcase my projects, skills, experience, and certifications.
 
 ## Features
@@ -108,4 +110,4 @@ Distributed under the MIT License. See `LICENSE` for more information. (Note: Yo
 ## Contact
 
 Enrique Zetina - [jenzetin@gmail.com](mailto:jenzetin@gmail.com)
-Project Link: [https://github.com/your_username/your_portfolio](https://github.com/ezetina86/Portfolio)
+Project Link: [https://github.com/ezetina86/Portfolio](https://github.com/ezetina86/Portfolio)
