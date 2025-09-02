@@ -1,5 +1,7 @@
 # My Personal Portfolio
 
+![Deploy Status](https://github.com/ezetina86/Portfolio/actions/workflows/deploy.yml/badge.svg)
+
 This is a personal portfolio website built with Astro, designed to showcase my projects, skills, experience, and certifications.
 
 ## Features
