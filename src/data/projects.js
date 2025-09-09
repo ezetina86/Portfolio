@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: 'MCP Weather Server',
+    category: 'Python',
+    image: '/img/mcp.png',
+    tags: ['Python', 'FastMCP', 'API', 'OpenMeteo', 'Weather'],
+    description: 'Built a Model Context Protocol server providing real-time weather data and forecasts through Open-Meteo API, featuring location search and comprehensive weather information.',
+    liveUrl: null,
+    repoUrl: 'https://github.com/ezetina86/mcp-example'
+  },
+  {
     title: 'Weather Dashboard',
     category: 'Cloud',
     image: '/img//weather.png',
