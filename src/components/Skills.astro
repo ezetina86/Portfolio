@@ -1,5 +1,13 @@
 ---
-const skills = {
+const locale = Astro.currentLocale;
+const skills = locale === 'es' ? {
+  'Plataformas en la Nube': ['AWS', 'Azure', 'GCP'],
+  'Herramientas DevOps': ['Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'Git', 'CI/CD'],
+  'Big Data': ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'Airflow'],
+  'Lenguajes': ['Python', 'Bash', 'SQL', 'JavaScript'],
+  'Bases de Datos': ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
+  'Otros': ['Linux', 'Redes', 'Seguridad', 'Metodologías Ágiles']
+} : {
   'Cloud Platforms': ['AWS', 'Azure', 'GCP'],
   'DevOps Tools': ['Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'Git', 'CI/CD'],
   'Big Data': ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'Airflow'],
@@ -8,19 +16,26 @@ const skills = {
   'Other': ['Linux', 'Networking', 'Security', 'Agile Methodologies']
 };
 
-const categoryColors = {
+const categoryColors = locale === 'es' ? {
+  'Plataformas en la Nube': 'brand-cloud',
+  'Herramientas DevOps': 'brand-devops',
+  'Big Data': 'brand-data',
+  'Lenguajes': 'brand-python',
+  'Bases de Datos': 'primary',
+  'Otros': 'secondary'
+} : {
   'Cloud Platforms': 'brand-cloud',
   'DevOps Tools': 'brand-devops',
   'Big Data': 'brand-data',
   'Languages': 'brand-python',
   'Databases': 'primary',
   'Other': 'secondary'
-}
+};
 ---
 
 <section id="skills" class="py-20 sm:py-32 bg-gray-900/50 animate-on-scroll">
   <div class="container mx-auto px-8">
-    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Technical Skills</h2>
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Habilidades Técnicas' : 'Technical Skills'}</h2>
     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
       {Object.entries(skills).map(([category, items], index) => (
         <div class="bg-base-bg p-6 rounded-lg shadow-lg border border-gray-700/50 animate-on-scroll" style={`--stagger-index: ${index};`}>
