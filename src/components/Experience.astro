@@ -1,10 +1,16 @@
 ---
-import { experiences } from '../data/experience.js';
+const locale = Astro.currentLocale;
+let experiences;
+if (locale === 'es') {
+  experiences = (await import('../data/experience-es.js')).experiences;
+} else {
+  experiences = (await import('../data/experience.js')).experiences;
+}
 ---
 
 <section id="experience" class="py-20 sm:py-32 animate-on-scroll">
   <div class="container mx-auto px-8">
-    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Work Experience</h2>
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Experiencia Laboral' : 'Work Experience'}</h2>
     <div class="mt-16 relative timeline-container">
       <!-- Timeline line -->
       <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700 timeline-line"></div>

@@ -1,10 +1,16 @@
 ---
-import { certifications } from '../data/certifications.js';
+const locale = Astro.currentLocale;
+let certifications;
+if (locale === 'es') {
+  certifications = (await import('../data/certifications-es.js')).certifications;
+} else {
+  certifications = (await import('../data/certifications.js')).certifications;
+}
 ---
 
 <section id="certifications" class="py-20 sm:py-32 bg-gray-900/50 animate-on-scroll">
   <div class="container mx-auto px-8">
-    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Certifications</h2>
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Certificaciones' : 'Certifications'}</h2>
     <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 justify-center stagger-children">
       {certifications.map((cert, index) => (
         <a href={cert.url} target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center text-center animate-on-scroll" style={`--stagger-index: ${index};`}>

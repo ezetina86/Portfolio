@@ -1,10 +1,20 @@
 ---
-import { projects, categories } from '../data/projects.js';
+const locale = Astro.currentLocale;
+let projects, categories;
+if (locale === 'es') {
+  const data = await import('../data/projects-es.js');
+  projects = data.projects;
+  categories = data.categories;
+} else {
+  const data = await import('../data/projects.js');
+  projects = data.projects;
+  categories = data.categories;
+}
 ---
 
 <section id="projects" class="py-20 sm:py-32 animate-on-scroll">
   <div class="container mx-auto px-8">
-    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">Projects</h2>
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Proyectos' : 'Projects'}</h2>
 
     <div class="mt-12 flex justify-center items-center gap-2 sm:gap-4 animate-on-scroll" id="project-filters">
       {categories.map(category => (
