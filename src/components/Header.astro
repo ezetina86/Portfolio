@@ -1,5 +1,14 @@
 ---
-const navLinks = [
+const locale = Astro.currentLocale;
+const navLinks = locale === 'es' ? [
+  { href: '#about', label: 'Sobre Mí' },
+  { href: '#education', label: 'Educación' },
+  { href: '#skills', label: 'Habilidades' },
+  { href: '#projects', label: 'Proyectos' },
+  { href: '#certifications', label: 'Certificaciones' },
+  { href: '#experience', label: 'Experiencia' },
+  { href: '#contact', label: 'Contacto' },
+] : [
   { href: '#about', label: 'About' },
   { href: '#education', label: 'Education' },
   { href: '#skills', label: 'Skills' },
@@ -12,13 +21,18 @@ const navLinks = [
 <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
   <div class="container mx-auto px-8 flex justify-between items-center h-20">
         <a href="#" class="text-2xl font-bold font-heading text-primary">EZ</a>
-    <nav class="hidden md:flex gap-8">
+    <div class="flex items-center gap-8">
+      <a href={locale === 'es' ? '/' : '/es'} class="text-gray-300 hover:text-primary transition-colors font-medium">
+        {locale === 'es' ? 'EN' : 'ES'}
+      </a>
+      <nav class="hidden md:flex gap-8">
       {navLinks.map(link => (
         <a href={link.href} class="text-gray-300 hover:text-primary transition-colors">{link.label}</a>
       ))}
     </nav>
-    <!-- Mobile nav button -->
-    <button id="mobile-nav-toggle" class="md:hidden text-gray-300 hover:text-primary">
+  </div>
+   <!-- Mobile nav button -->
+   <button id="mobile-nav-toggle" class="md:hidden text-gray-300 hover:text-primary">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
     </button>
   </div>

@@ -1,18 +1,19 @@
 ---
---- 
+const locale = Astro.currentLocale;
+---
 <section id="about" class="py-20 sm:py-32 animate-on-scroll">
   <div class="container mx-auto px-8">
-    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">About Me</h2>
+    <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Sobre Mí' : 'About Me'}</h2>
     <div class="mt-12 grid md:grid-cols-2 gap-12 items-center stagger-children">
       <div class="animate-on-scroll" style="--stagger-index: 1;">
         <img src="/img/ProfilePicture.jpeg" alt="Enrique Zetina" class="rounded-lg mx-auto w-2/3 md:w-full max-w-sm">
       </div>
       <div class="text-lg text-gray-300 space-y-4 animate-on-scroll" style="--stagger-index: 2;">
         <p>
-          I am a certified Cloud Architect and Python Developer with a passion for building innovative and efficient solutions. With over 10 years of experience, I specialize in designing and implementing robust cloud infrastructures on AWS, GCP, and Azure.
+          {locale === 'es' ? 'Soy un Arquitecto de Nubes certificado y Desarrollador Python con pasión por construir soluciones innovadoras y eficientes. Con más de 10 años de experiencia, me especializo en diseñar e implementar infraestructuras en la nube robustas en AWS, GCP y Azure.' : 'I am a certified Cloud Architect and Python Developer with a passion for building innovative and efficient solutions. With over 10 years of experience, I specialize in designing and implementing robust cloud infrastructures on AWS, GCP, and Azure.'}
         </p>
         <p>
-          My expertise lies in DevOps, Big Data, and automation, where I leverage tools like Kubernetes, Terraform, and Airflow to create seamless CI/CD pipelines and data workflows. I am driven by the challenge of solving complex problems and delivering high-quality, scalable systems.
+          {locale === 'es' ? 'Mi experiencia radica en DevOps, Big Data y automatización, donde aprovecho herramientas como Kubernetes, Terraform y Airflow para crear pipelines CI/CD fluidos y flujos de trabajo de datos. Me impulsa el desafío de resolver problemas complejos y entregar sistemas escalables de alta calidad.' : 'My expertise lies in DevOps, Big Data, and automation, where I leverage tools like Kubernetes, Terraform, and Airflow to create seamless CI/CD pipelines and data workflows. I am driven by the challenge of solving complex problems and delivering high-quality, scalable systems.'}
         </p>
         <ul class="flex flex-wrap gap-4 mt-6">
           <li class="bg-brand-cloud/20 text-brand-cloud py-1 px-3 rounded-full text-sm font-semibold">Cloud Architecture</li>
