@@ -32,8 +32,8 @@ export const projects = [
     category: 'Python',
     image: '/img/exam_generator.png',
     tags: ['Python', 'Flask', 'MongoDB', 'CI/CD', 'GCP', 'Generative AI', 'Docker'],
-    description: 'Certification exam generator that scrapes questions from various sources, processes them, and generates practice exams for users.',
-    liveUrl: null,
+    description: '🚀 Certification exam generator that scrapes questions from various sources, processes them, and generates practice exams for users. Now live in production - try it out!',
+    liveUrl: 'https://exam-generator.ezetina.com/',
     repoUrl: 'https://github.com/ezetina86/exam-generator',
   }
 ];
