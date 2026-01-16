@@ -71,6 +71,11 @@ document.addEventListener('astro:page-load', () => {
     updateCarousel();
     resetInterval();
 
+    // Cleanup on navigation
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(interval);
+    }, { once: true });
+
     // Add event listeners
     if (nextBtn) nextBtn.addEventListener('click', () => {
       nextSlide();
