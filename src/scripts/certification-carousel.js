@@ -24,9 +24,18 @@ document.addEventListener('astro:page-load', () => {
 
     const dots = dotsContainer.querySelectorAll('.certification-dot');
 
+    let slideWidth = 300;
+
+    function updateDimensions() {
+      const container = slides[0]?.parentElement;
+      if (container) container.style.width = '';
+      slides.forEach(slide => slide.style.width = '');
+
+      slideWidth = slides[0]?.offsetWidth || 300;
+    }
+
     function updateCarousel() {
       // Position all slides side by side
-      const slideWidth = slides[0]?.offsetWidth || 300;
       const container = slides[0]?.parentElement;
 
       if (container) {
@@ -68,8 +77,16 @@ document.addEventListener('astro:page-load', () => {
     }
 
     // Initialize
+    updateDimensions();
     updateCarousel();
     resetInterval();
+
+    // Handle resize
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+      updateCarousel();
+    });
+    resizeObserver.observe(container);
 
     // Add event listeners
     if (nextBtn) nextBtn.addEventListener('click', () => {
