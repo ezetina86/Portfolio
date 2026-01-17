@@ -1,7 +1,4 @@
 document.addEventListener('astro:page-load', () => {
-  // Get certifications data from the page
-  const certifications = JSON.parse(document.getElementById('certifications-data')?.textContent || '[]');
-
   // Initialize certification carousel
   const carouselContainers = document.querySelectorAll('.certification-carousel-container');
 
@@ -103,7 +100,7 @@ document.addEventListener('astro:page-load', () => {
         const title = slide.querySelector('h3').textContent;
         const image = slide.querySelector('img').src;
         const url = link.href;
-        const description = certifications.find(cert => cert.title === title)?.description || 'Certification details';
+        const description = slide.dataset.description || 'Certification details';
 
         modalTitle.textContent = title;
         modalImage.src = image;
