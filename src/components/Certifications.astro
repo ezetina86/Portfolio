@@ -12,11 +12,6 @@ if (locale === 'es') {
   <div class="container mx-auto px-8">
     <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Certificaciones' : 'Certifications'}</h2>
 
-    <!-- Store certifications data for modal access -->
-    <div id="certifications-data" style="display: none;">
-      {JSON.stringify(certifications)}
-    </div>
-
     <!-- Certification Word Cloud -->
     <div class="certification-word-cloud animate-on-scroll">
       {[
@@ -96,7 +91,10 @@ if (locale === 'es') {
       <div class="certification-carousel overflow-hidden">
         <div class="flex transition-transform duration-500 ease-in-out">
           {certifications.map((cert, index) => (
-            <div class={`certification-slide flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 ${index === 0 ? 'active' : ''}`}>
+            <div
+              class={`certification-slide flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 ${index === 0 ? 'active' : ''}`}
+              data-description={cert.description}
+            >
               <a href={cert.url} target="_blank" rel="noopener noreferrer" class="block h-full">
                 <div class="certification-card h-full bg-gray-800 rounded-lg p-4 transition-all duration-300 hover:bg-gray-700">
                   <div class="flex justify-center mb-3">
