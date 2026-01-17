@@ -88,6 +88,12 @@ document.addEventListener('astro:page-load', () => {
     });
     resizeObserver.observe(container);
 
+    // Cleanup interval on navigation
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(interval);
+      resizeObserver.disconnect();
+    }, { once: true });
+
     // Add event listeners
     if (nextBtn) nextBtn.addEventListener('click', () => {
       nextSlide();
