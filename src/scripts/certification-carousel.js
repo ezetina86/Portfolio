@@ -91,12 +91,6 @@ document.addEventListener('astro:page-load', () => {
       resizeObserver.disconnect();
     }, { once: true });
 
-    // Add event listeners
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetInterval();
-    });
-
     if (prevBtn) prevBtn.addEventListener('click', () => {
       prevSlide();
       resetInterval();
