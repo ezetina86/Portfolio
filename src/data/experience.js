@@ -1,8 +1,14 @@
 export const experiences = [
   {
     role: 'Cloud Platform Developer',
+    company: 'Royal Bank of Canada (RBC)',
+    period: 'Feb 2026--Present',
+    description: 'Supporting RBC\'s GCP environment across assessment, compliance, and migration workstreams for one of Canada\'s largest banks with over 15 million global clients.\nEvaluating current GCP usage, generating findings reports, and benchmarking cloud capabilities against Azure and AWS with actionable recommendations.\nProviding architectural guidance for Firebase, Google Analytics, and Google Play use cases, addressing onboarding, provisioning, CI/CD workflows, and user access controls.\nDriving migration of Firebase application teams to the RBC Quarantine GCP organization, coordinating with Product, Cloud Support, SRE, Cloud Security, and application teams to deliver a phased migration plan with a security baseline.'
+  },
+  {
+    role: 'Cloud Platform Developer',
     company: 'Grainger',
-    period: 'Apr 2025--Present',
+    period: 'Apr 2025--Feb 2026',
     description: 'Implemented cloud governance policies and controls using Infrastructure as Code (IaC).\nDeveloped and maintained APIs and automation services to enhance governance and cost optimization.\nContributed to FinOps initiatives, including cost allocation, optimization, and reporting processes.\nMade architectural decisions to ensure scalable, secure, and cost-efficient cloud solutions.'
   },
   {

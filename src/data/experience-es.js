@@ -1,8 +1,14 @@
 export const experiences = [
   {
     role: 'Desarrollador de Plataforma en la Nube',
+    company: 'Royal Bank of Canada (RBC)',
+    period: 'Feb 2026--Presente',
+    description: 'Apoyando el entorno GCP de RBC en áreas de evaluación, cumplimiento y migración para uno de los bancos más grandes de Canadá con más de 15 millones de clientes globales.\nEvaluando el uso actual de GCP, generando reportes de hallazgos y comparando capacidades de nube frente a Azure y AWS con recomendaciones accionables.\nBrindando orientación arquitectónica para casos de uso de Firebase, Google Analytics y Google Play, abordando flujos de incorporación, aprovisionamiento, CI/CD y controles de acceso.\nImpulsando la migración de equipos de aplicaciones Firebase a la organización RBC Quarantine GCP, coordinando con equipos de Producto, Soporte Cloud, SRE, Seguridad Cloud y equipos de aplicaciones para ejecutar un plan de migración por fases con una línea base de seguridad.'
+  },
+  {
+    role: 'Desarrollador de Plataforma en la Nube',
     company: 'Grainger',
-    period: 'Abr 2025--Presente',
+    period: 'Abr 2025--Feb 2026',
     description: 'Implementé políticas y controles de gobernanza en la nube utilizando Infraestructura como Código (IaC).\nDesarrollé y mantuve APIs y servicios de automatización para mejorar la gobernanza y la optimización de costos.\nContribuí a iniciativas de FinOps, incluyendo asignación de costos, optimización y procesos de reporte.\nTomé decisiones arquitectónicas para asegurar soluciones en la nube escalables, seguras y eficientes en costos.'
   },
   {

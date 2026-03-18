@@ -17,8 +17,9 @@ export default {
         'brand-python': '#22C55E',
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        heading: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+        heading: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
     },
   },
