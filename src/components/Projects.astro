@@ -12,15 +12,16 @@ if (locale === 'es') {
 }
 ---
 
-<section id="projects" class="py-20 sm:py-32 animate-on-scroll">
+<section id="projects" class="py-10 sm:py-16 animate-on-scroll">
   <div class="container mx-auto px-8">
     <h2 class="text-4xl font-bold font-heading text-center animate-on-scroll">{locale === 'es' ? 'Proyectos' : 'Projects'}</h2>
 
-    <div class="mt-12 flex justify-center items-center gap-2 sm:gap-4 animate-on-scroll" id="project-filters">
-      {categories.map(category => (
+    <div class="mt-8 flex justify-center items-center gap-2 sm:gap-4 animate-on-scroll" id="project-filters">
+      {categories.map((category, i) => (
         <button
-          class="filter-btn capitalize bg-gray-800 text-gray-300 py-2 px-4 rounded-md text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white"
+          class="filter-btn capitalize bg-gray-800 text-gray-300 py-2 px-4 rounded-md text-sm font-medium transition-[background-color,color] duration-300 hover:bg-primary hover:text-white"
           data-category={category}
+          aria-pressed={i === 0 ? 'true' : 'false'}
         >
           {category}
         </button>
@@ -30,7 +31,7 @@ if (locale === 'es') {
     <div id="project-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
       {projects.map((project, index) => (
         <div class="project-card bg-base-bg p-6 rounded-lg shadow-lg border border-gray-700/50 flex flex-col animate-on-scroll" data-category={project.category} style={`--stagger-index: ${index};`}>
-          <img src={project.image} alt={project.title} class="rounded-md h-48 w-full object-cover mb-4">
+          <img src={project.image} alt={project.title} width="600" height="192" class="rounded-md h-48 w-full object-cover mb-4" loading="lazy">
           <h3 class="text-xl font-bold font-heading text-primary">{project.title}</h3>
           <div class="flex flex-wrap gap-2 mt-2">
             {project.tags.map(tag => (
@@ -59,9 +60,13 @@ if (locale === 'es') {
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      // Update active button style
-      filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+      // Update active button style and aria-pressed
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white');
+        btn.setAttribute('aria-pressed', 'false');
+      });
       button.classList.add('bg-primary', 'text-white');
+      button.setAttribute('aria-pressed', 'true');
 
       const category = button.getAttribute('data-category');
 
