@@ -4,143 +4,6 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Certification Word Cloud */
-.certification-word-cloud {
-  position: relative;
-  height: 200px;
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.word-cloud-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  height: 100%;
-}
-
-.word-cloud-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-.word-cloud-item {
-  position: absolute;
-  color: #9ca3af; /* Gray-400 - default color for supporting words */
-  font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  cursor: default;
-  user-select: none;
-  animation: float 15s infinite ease-in-out;
-  transition: all 0.3s ease;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-}
-
-.word-cloud-item:hover {
-  color: white;
-  transform: scale(1.1);
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-15px) rotate(2deg);
-  }
-  50% {
-    transform: translateY(0) rotate(0deg);
-  }
-  75% {
-    transform: translateY(15px) rotate(-2deg);
-  }
-}
-
-/* Color only for large (main) words */
-.word-cloud-item.large:nth-child(4n) {
-  color: #3b82f6; /* Blue */
-}
-
-.word-cloud-item.large:nth-child(4n+1) {
-  color: #10b981; /* Green */
-}
-
-.word-cloud-item.large:nth-child(4n+2) {
-  color: #8b5cf6; /* Purple */
-}
-
-.word-cloud-item.large:nth-child(4n+3) {
-  color: #f59e0b; /* Amber */
-}
-
-/* Medium words - white */
-.word-cloud-item.medium {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* Small words - gray */
-.word-cloud-item.small {
-  color: #9ca3af; /* Gray-400 */
-  font-weight: 500;
-}
-
-/* Add some emphasis to key words */
-.word-cloud-item.large {
-  font-weight: 700;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-  animation-duration: 20s !important;
-}
-
-.word-cloud-item.medium {
-  font-weight: 600;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-
-.word-cloud-item.small {
-  font-weight: 500;
-}
-
-/* Make large words have more prominent hover effects */
-.word-cloud-item.large:hover {
-  transform: scale(1.3) !important;
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.6) !important;
-}
-
-/* Responsive word cloud */
-@media (max-width: 768px) {
-  .certification-word-cloud {
-    height: 150px;
-  }
-
-  .word-cloud-item {
-    font-size: 10px !important;
-  }
-}
-
-/* Responsive word cloud */
-@media (max-width: 768px) {
-  .certification-word-cloud {
-    height: 150px;
-  }
-
-  .word-cloud-item {
-    font-size: 10px !important;
-  }
-}
-
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
@@ -151,169 +14,183 @@
   transition-delay: calc(var(--stagger-index) * 100ms);
 }
 
-/* Certification carousel animations */
-.certification-carousel {
-  position: relative;
+/* ── Terminal Window ──────────────────────────────────────────────────────── */
+
+.terminal-window {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   overflow: hidden;
-  padding: 20px 60px; /* Add padding to prevent navigation overlap */
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 24px 64px rgba(0, 0, 0, 0.55);
 }
 
-.certification-carousel > div {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  will-change: transform;
-  position: relative;
-}
-
-.certification-slide {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  position: relative;
-}
-
-.certification-slide {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-.certification-slide.active {
-  transform: scale(1.05);
-  z-index: 10;
-}
-
-.certification-slide:hover {
-  transform: scale(1.05) rotateY(3deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.certification-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+.terminal-header {
+  background: #161b22;
+  padding: 0.65rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 20; /* Ensure navigation is always on top */
+  gap: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.certification-nav:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: translateY(-50%) scale(1.2);
-}
-
-.certification-nav.prev {
-  left: 0px;
-}
-
-.certification-nav.next {
-  right: 0px;
-}
-
-.certification-progress {
-  position: absolute;
-  bottom: -30px; /* Move dots below carousel */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 20;
-}
-
-.certification-dot {
+.terminal-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.terminal-dot.red    { background: #ff5f56; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green  { background: #27c93f; }
+
+.terminal-title {
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  color: #6e7681;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
 }
 
-.certification-dot.active {
-  background: white;
-  transform: scale(1.4);
+.terminal-body {
+  padding: 1.1rem 1.4rem 1.35rem;
+  min-height: 148px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.8;
 }
 
-/* 3D card effect */
-.certification-card {
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.certification-card:hover {
-  transform: rotateY(10deg) rotateX(5deg);
-}
-
-/* Modal overlay for certification details */
-.certification-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+.terminal-line {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.terminal-prompt {
+  color: #10B981;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.terminal-command {
+  color: #e6edf3;
+}
+
+.terminal-response {
+  color: #8b949e;
+  padding-left: 1.35rem;
+  margin-bottom: 0.1rem;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1em;
+  background: #10B981;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: blink-cursor 1.1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Tag / Pill Word Cloud ─────────────────────────────────────────────────── */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  align-items: center;
+  gap: 0.65rem 0.9rem;
+  padding: 2.5rem 1.5rem;
+  background: radial-gradient(ellipse at 50% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 68%);
+  border-radius: 1.5rem;
 }
 
-.certification-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.certification-modal-content {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-.certification-modal.active .certification-modal-content {
-  transform: scale(1);
-}
-
-.certification-modal-description {
-  line-height: 1.6;
-  font-size: 1rem;
-  min-height: 60px;
-}
-
-.certification-modal-close {
-  background: #374151;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: default;
+  user-select: none;
 }
 
-.certification-modal-close:hover {
-  background: #4b5563;
+.tag-pill:hover {
+  transform: translateY(-3px) scale(1.08);
 }
 
-.certification-modal-url {
-  background: #3b82f6;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: 600;
-}
+/* Sizes */
+.tag-pill.xl { font-size: 1.75rem; padding: 0.45rem 1.2rem; }
+.tag-pill.lg { font-size: 1.2rem;  padding: 0.38rem 1rem;   }
+.tag-pill.md { font-size: 0.92rem; padding: 0.3rem 0.8rem;  }
+.tag-pill.sm { font-size: 0.72rem; padding: 0.22rem 0.6rem; opacity: 0.75; }
 
-.certification-modal-url:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
+/* Domain colour variants */
+.tag-pill.aws      { background: rgba(245,158,11,  0.12); color: #FBBF24; border-color: rgba(245,158,11,  0.3); }
+.tag-pill.aws:hover      { background: rgba(245,158,11,  0.22); box-shadow: 0 4px 22px rgba(245,158,11,  0.3); }
+
+.tag-pill.gcp      { background: rgba(66, 133,244,  0.12); color: #60A5FA; border-color: rgba(66, 133,244,  0.3); }
+.tag-pill.gcp:hover      { background: rgba(66, 133,244,  0.22); box-shadow: 0 4px 22px rgba(66, 133,244,  0.3); }
+
+.tag-pill.azure    { background: rgba(14, 165,233,  0.12); color: #38BDF8; border-color: rgba(14, 165,233,  0.3); }
+.tag-pill.azure:hover    { background: rgba(14, 165,233,  0.22); box-shadow: 0 4px 22px rgba(14, 165,233,  0.3); }
+
+.tag-pill.terraform { background: rgba(124,58, 237, 0.12); color: #A78BFA; border-color: rgba(124,58, 237, 0.3); }
+.tag-pill.terraform:hover { background: rgba(124,58, 237, 0.22); box-shadow: 0 4px 22px rgba(124,58, 237, 0.3); }
+
+.tag-pill.devops   { background: rgba(16, 185,129,  0.12); color: #34D399; border-color: rgba(16, 185,129,  0.3); }
+.tag-pill.devops:hover   { background: rgba(16, 185,129,  0.22); box-shadow: 0 4px 22px rgba(16, 185,129,  0.3); }
+
+.tag-pill.ai       { background: rgba(236,72, 153,  0.12); color: #F472B6; border-color: rgba(236,72, 153,  0.3); }
+.tag-pill.ai:hover       { background: rgba(236,72, 153,  0.22); box-shadow: 0 4px 22px rgba(236,72, 153,  0.3); }
+
+.tag-pill.data     { background: rgba(139,92, 246,  0.12); color: #C4B5FD; border-color: rgba(139,92, 246,  0.3); }
+.tag-pill.data:hover     { background: rgba(139,92, 246,  0.22); box-shadow: 0 4px 22px rgba(139,92, 246,  0.3); }
+
+.tag-pill.airflow  { background: rgba(13, 148,136,  0.12); color: #2DD4BF; border-color: rgba(13, 148,136,  0.3); }
+.tag-pill.airflow:hover  { background: rgba(13, 148,136,  0.22); box-shadow: 0 4px 22px rgba(13, 148,136,  0.3); }
+
+.tag-pill.k8s      { background: rgba(59, 130,246,  0.12); color: #93C5FD; border-color: rgba(59, 130,246,  0.3); }
+.tag-pill.k8s:hover      { background: rgba(59, 130,246,  0.22); box-shadow: 0 4px 22px rgba(59, 130,246,  0.3); }
+
+.tag-pill.security { background: rgba(239,68, 68,   0.12); color: #FCA5A5; border-color: rgba(239,68, 68,   0.3); }
+.tag-pill.security:hover { background: rgba(239,68, 68,   0.22); box-shadow: 0 4px 22px rgba(239,68, 68,   0.3); }
+
+.tag-pill.muted    { background: rgba(156,163,175,  0.07); color: #D1D5DB; border-color: rgba(156,163,175, 0.18); }
+.tag-pill.muted:hover    { background: rgba(156,163,175,  0.14); box-shadow: 0 4px 16px rgba(156,163,175, 0.15); }
+
+
+/* ── Reduced motion ───────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .terminal-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .tag-pill {
+    transition: none;
+    animation: none;
+  }
+
+  .stagger-children > * {
+    transition-delay: 0ms;
+  }
 }

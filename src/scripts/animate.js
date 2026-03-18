@@ -1,4 +1,14 @@
 document.addEventListener('astro:page-load', () => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+  if (reducedMotion) {
+    // Reveal all elements immediately without animation
+    animatedElements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -10,6 +20,5 @@ document.addEventListener('astro:page-load', () => {
     threshold: 0.1,
   });
 
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
   animatedElements.forEach(el => observer.observe(el));
 });
