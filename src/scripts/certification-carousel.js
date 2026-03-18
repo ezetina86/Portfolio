@@ -1,7 +1,4 @@
 document.addEventListener('astro:page-load', () => {
-  // Get certifications data from the page
-  const certifications = JSON.parse(document.getElementById('certifications-data')?.textContent || '[]');
-
   // Initialize certification carousel
   const carouselContainers = document.querySelectorAll('.certification-carousel-container');
 
@@ -10,35 +7,13 @@ document.addEventListener('astro:page-load', () => {
     const prevBtn = container.querySelector('.certification-nav.prev');
     const nextBtn = container.querySelector('.certification-nav.next');
     const dotsContainer = container.querySelector('.certification-progress');
-    const liveRegion = container.querySelector('#carousel-live-region');
     let currentIndex = 0;
     let interval;
 
-    // Cache slide width to avoid layout reads on every update
-    let cachedSlideWidth = 300;
-
-    function readSlideWidth() {
-      if (slides[0]) {
-        cachedSlideWidth = slides[0].offsetWidth || cachedSlideWidth;
-      }
-    }
-
-    // Read width once on init (single layout read)
-    readSlideWidth();
-
-    // Update cached width on resize via ResizeObserver (safe — runs post-layout)
-    const resizeObserver = new ResizeObserver(() => {
-      readSlideWidth();
-      updateCarousel();
-    });
-    if (slides[0]) resizeObserver.observe(slides[0]);
-
-    // Create dots for progress indicator using <button> for proper semantics
+    // Create dots for progress indicator
     slides.forEach((_, index) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
+      const dot = document.createElement('div');
       dot.classList.add('certification-dot');
-      dot.setAttribute('aria-label', `Go to certification ${index + 1}`);
       if (index === 0) dot.classList.add('active');
       dot.addEventListener('click', () => goToSlide(index));
       dotsContainer.appendChild(dot);
@@ -46,13 +21,23 @@ document.addEventListener('astro:page-load', () => {
 
     const dots = dotsContainer.querySelectorAll('.certification-dot');
 
-    function updateCarousel() {
-      const slideWidth = cachedSlideWidth;
-      const innerContainer = slides[0]?.parentElement;
+    let slideWidth = 300;
 
-      if (innerContainer) {
-        innerContainer.style.width = `${slideWidth * slides.length}px`;
-        innerContainer.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    function updateDimensions() {
+      const container = slides[0]?.parentElement;
+      if (container) container.style.width = '';
+      slides.forEach(slide => slide.style.width = '');
+
+      slideWidth = slides[0]?.offsetWidth || 300;
+    }
+
+    function updateCarousel() {
+      // Position all slides side by side
+      const container = slides[0]?.parentElement;
+
+      if (container) {
+        container.style.width = `${slideWidth * slides.length}px`;
+        container.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
       }
 
       slides.forEach((slide, index) => {
@@ -64,14 +49,7 @@ document.addEventListener('astro:page-load', () => {
 
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentIndex);
-        dot.setAttribute('aria-label', `Go to certification ${index + 1}${index === currentIndex ? ' (current)' : ''}`);
       });
-
-      // Announce current slide to screen readers
-      if (liveRegion && slides[currentIndex]) {
-        const title = slides[currentIndex].querySelector('h3')?.textContent ?? '';
-        liveRegion.textContent = `Showing certification ${currentIndex + 1} of ${slides.length}: ${title}`;
-      }
     }
 
     function goToSlide(index) {
@@ -96,115 +74,74 @@ document.addEventListener('astro:page-load', () => {
     }
 
     // Initialize
+    updateDimensions();
     updateCarousel();
     resetInterval();
 
-    // Add event listeners
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetInterval();
+    // Handle resize
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+      updateCarousel();
     });
+    resizeObserver.observe(container);
+
+    // Cleanup interval on navigation
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(interval);
+      resizeObserver.disconnect();
+    }, { once: true });
 
     if (prevBtn) prevBtn.addEventListener('click', () => {
       prevSlide();
       resetInterval();
     });
 
-    // Keyboard arrow navigation on the carousel container
-    container.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
-      if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
-    });
-
     // Pause on hover
     container.addEventListener('mouseenter', () => clearInterval(interval));
     container.addEventListener('mouseleave', resetInterval);
 
-    // Add click handlers for modal — card is now a <button>
+    // Add click handlers for modal
     slides.forEach(slide => {
-      const btn = slide.querySelector('button');
-      if (!btn) return;
-      btn.addEventListener('click', () => {
+      const link = slide.querySelector('a');
+      slide.addEventListener('click', (e) => {
+        // Prevent link navigation, show modal instead
+        e.preventDefault();
+        e.stopPropagation();
+
         const modal = document.getElementById('certification-modal');
         const modalTitle = modal.querySelector('.certification-modal-title');
         const modalImage = modal.querySelector('.certification-modal-image');
         const modalDescription = modal.querySelector('.certification-modal-description');
         const modalUrl = modal.querySelector('.certification-modal-url');
 
-        const title = slide.querySelector('p')?.textContent?.trim() ?? '';
-        const image = slide.querySelector('img')?.src ?? '';
-        const certData = certifications.find(cert => cert.title === title);
+        const title = slide.querySelector('h3').textContent;
+        const image = slide.querySelector('img').src;
+        const url = link.href;
+        const description = slide.dataset.description || 'Certification details';
 
         modalTitle.textContent = title;
         modalImage.src = image;
-        modalImage.alt = title;
-        modalDescription.textContent = certData?.description ?? '';
-        modalUrl.href = certData?.url ?? '#';
+        modalDescription.textContent = description;
+        modalUrl.href = url;
 
-        openModal(modal, btn);
+        modal.classList.add('active');
       });
     });
   });
 
-  // ── Modal helpers ──────────────────────────────────────────────────────────
-
-  function getFocusableElements(container) {
-    return Array.from(container.querySelectorAll(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    ));
-  }
-
-  function openModal(modal, triggerEl) {
-    modal.classList.add('active');
-    modal._trigger = triggerEl;
-
-    // Move focus to first focusable element inside modal
-    const focusable = getFocusableElements(modal);
-    if (focusable.length) focusable[0].focus();
-
-    // Trap focus inside modal
-    modal._trapHandler = (e) => {
-      if (e.key !== 'Tab') return;
-      const focusable = getFocusableElements(modal);
-      if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-      } else {
-        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    };
-    modal.addEventListener('keydown', modal._trapHandler);
-  }
-
-  function closeModal(modal) {
-    modal.classList.remove('active');
-    modal.removeEventListener('keydown', modal._trapHandler);
-    // Restore focus to the element that triggered the modal
-    if (modal._trigger) modal._trigger.focus();
-    modal._trigger = null;
-  }
-
   // Modal close functionality
   const modal = document.getElementById('certification-modal');
   if (modal) {
-    // Close on backdrop click
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal(modal);
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal(modal);
+      if (e.target === modal) {
+        modal.classList.remove('active');
       }
     });
 
-    // Close button
+    // Close button functionality
     const closeBtn = modal.querySelector('.certification-modal-close');
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => closeModal(modal));
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
     }
   }
 });
