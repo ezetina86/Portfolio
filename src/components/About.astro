@@ -20,10 +20,12 @@ const locale = Astro.currentLocale;
             : 'Specializing in the intersection of Generative AI infrastructure, FinOps-driven cloud governance, and IaC-powered DevOps — from orchestrating 500+ Cloud Run services at P&G to leading GCP compliance and migration workstreams for RBC\'s 15M+ global clients. Recognized for architecting cost-optimized, AI-augmented platforms that bridge Big Data engineering and automated governance to deliver measurable business impact at enterprise scale.'}
         </p>
         <ul class="flex flex-wrap gap-4 mt-6">
-          <li class="bg-brand-cloud/20 text-brand-cloud py-1 px-3 rounded-full text-sm font-semibold">Cloud Architecture</li>
-          <li class="bg-brand-devops/20 text-brand-devops py-1 px-3 rounded-full text-sm font-semibold">DevOps</li>
-          <li class="bg-brand-data/20 text-brand-data py-1 px-3 rounded-full text-sm font-semibold">Big Data</li>
-          <li class="bg-brand-python/20 text-brand-python py-1 px-3 rounded-full text-sm font-semibold">Python</li>
+          <li class="bg-brand-cloud/20 text-brand-cloud py-1 px-3 rounded-full text-sm font-semibold">{locale === 'es' ? 'Arquitectura Cloud' : 'Cloud Architecture'}</li>
+          <li class="bg-brand-python/20 text-brand-python py-1 px-3 rounded-full text-sm font-semibold">{locale === 'es' ? 'IA Generativa' : 'AI & Generative AI'}</li>
+          <li class="bg-secondary/20 text-secondary py-1 px-3 rounded-full text-sm font-semibold">{locale === 'es' ? 'Gobernanza & FinOps' : 'Cloud Governance & FinOps'}</li>
+          <li class="bg-brand-devops/20 text-brand-devops py-1 px-3 rounded-full text-sm font-semibold">DevOps & CI/CD</li>
+          <li class="bg-brand-data/20 text-brand-data py-1 px-3 rounded-full text-sm font-semibold">{locale === 'es' ? 'Big Data' : 'Big Data'}</li>
+          <li class="bg-primary/20 text-primary py-1 px-3 rounded-full text-sm font-semibold">{locale === 'es' ? 'APIs & Apigee X' : 'Apigee X & APIs'}</li>
         </ul>
       </div>
     </div>
