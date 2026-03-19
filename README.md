@@ -34,37 +34,52 @@ Make sure you have Node.js (which includes npm) installed on your machine.
     ```sh
     cd Portfolio
     ```
-3.  Install NPM packages
+3.  Install dependencies
     ```sh
-    npm install
+    make install
     ```
+
+### Available Commands
+
+All common tasks are wrapped by the `Makefile`. Run `make help` to list them at any time.
+
+| Command | Description |
+|---|---|
+| `make dev` | Start dev server at `http://localhost:4321` |
+| `make build` | Build static site to `dist/` |
+| `make preview` | Build then serve `dist/` locally |
+| `make test` | Run tests once |
+| `make test-watch` | Run tests in watch mode |
+| `make test-ui` | Run tests with browser UI |
+| `make install` | Install dependencies |
+| `make clean` | Remove `dist/` build output |
 
 ### Development
 
 To start the development server:
 
 ```sh
-npm run dev
+make dev
 ```
 
-This will start a local development server, usually at `http://localhost:4321`.
+This will start a local development server at `http://localhost:4321`.
 
 ### Build
 
 To build the project for production:
 
 ```sh
-npm run build
+make build
 ```
 
-This command will generate a `dist/` directory with all the static assets.
+This generates a `dist/` directory with all the static assets.
 
 ### Preview
 
 To preview the production build locally:
 
 ```sh
-npm run preview
+make preview
 ```
 
 ## Project Structure
@@ -101,7 +116,7 @@ graph TD
 
 ## Deployment
 
-After running `npm run build`, the `dist/` directory contains the static files ready for deployment. You can deploy this directory to any static site hosting service (e.g., Netlify, Vercel, GitHub Pages).
+After running `make build`, the `dist/` directory contains the static files ready for deployment. You can deploy this directory to any static site hosting service (e.g., Netlify, Vercel, GitHub Pages).
 
 ## License
 
