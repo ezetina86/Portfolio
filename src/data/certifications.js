@@ -86,5 +86,13 @@ export const certifications = [
     image: '/img/airflow.png',
     url: 'https://www.credly.com/badges/3b6ee162-1f2e-4d6e-9385-0d6929f35441',
     description: 'Certification in Apache Airflow fundamentals for workflow automation, DAG creation, and data pipeline orchestration.'
+  },
+  {
+    title: 'Claude Certified Architect – Foundations',
+    provider: 'Anthropic',
+    level: 'Foundational',
+    image: '/img/Anthropic.png',
+    url: 'https://verify.skilljar.com/c/vjo8xynofbsp',
+    description: 'Certification in Claude AI architecture fundamentals, covering model capabilities, prompt engineering, and responsible AI deployment at enterprise scale.'
   }
 ];
