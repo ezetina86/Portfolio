@@ -15,6 +15,7 @@ const providerMeta = {
   Azure:      { label: 'Microsoft Azure',       color: '#38BDF8' },
   HashiCorp:  { label: 'HashiCorp',             color: '#8B5CF6' },
   Astronomer: { label: 'Astronomer',            color: '#0D9488' },
+  Anthropic:  { label: 'Anthropic',             color: '#CF4B1D' },
 };
 
 const levelMeta = {
@@ -40,7 +41,7 @@ const levelMeta = {
   },
 };
 
-const providerOrder = ['GCP', 'AWS', 'Azure', 'HashiCorp', 'Astronomer'];
+const providerOrder = ['GCP', 'AWS', 'Azure', 'HashiCorp', 'Astronomer', 'Anthropic'];
 
 // Group by provider
 const grouped: Record<string, typeof certifications> = {};
