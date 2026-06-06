@@ -1,35 +1,43 @@
 ---
 const locale = Astro.currentLocale;
 const skills = locale === 'es' ? {
-  'Plataformas en la Nube': ['AWS', 'Azure', 'GCP'],
-  'Herramientas DevOps': ['Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'Git', 'CI/CD'],
-  'Big Data': ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'Airflow'],
-  'Lenguajes': ['Python', 'Bash', 'SQL', 'JavaScript'],
-  'Bases de Datos': ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
-  'Otros': ['Linux', 'Redes', 'Seguridad', 'Metodologías Ágiles']
+  'Plataformas en la Nube': ['GCP', 'AWS', 'Microsoft Azure'],
+  'IA & IA Generativa': ['Vertex AI', 'AWS Bedrock', 'AWS SageMaker', 'LangChain', 'BigQuery ML', 'Prompt Engineering', 'Foundation Models'],
+  'DevOps & CI/CD': ['GitHub Actions', 'GitLab CI', 'Jenkins', 'Docker', 'Terraform', 'Bitbucket Pipelines', 'IaC a Escala'],
+  'Big Data & Datos Distribuidos': ['BigQuery', 'Dataflow', 'Apache Beam', 'Pub/Sub', 'Dataproc', 'Apache Airflow', 'Cloud Composer', 'dbt'],
+  'Gobernanza Cloud & FinOps': ['FinOps Framework', 'CloudZero', 'Cloud Armor', 'Optimización de Costos', 'Cumplimiento Multi-Cloud', 'Diseño HA/DR'],
+  'API & Desarrollo': ['Apigee X', 'FastAPI', 'Flask', 'SpringBoot', 'Go (Golang)'],
+  'Lenguajes': ['Python', 'Go', 'Java', 'SQL'],
+  'Bases de Datos': ['PostgreSQL', 'Cloud SQL', 'AWS RDS']
 } : {
-  'Cloud Platforms': ['AWS', 'Azure', 'GCP'],
-  'DevOps Tools': ['Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'Git', 'CI/CD'],
-  'Big Data': ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'Airflow'],
-  'Languages': ['Python', 'Bash', 'SQL', 'JavaScript'],
-  'Databases': ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
-  'Other': ['Linux', 'Networking', 'Security', 'Agile Methodologies']
+  'Cloud Platforms': ['GCP', 'AWS', 'Microsoft Azure'],
+  'AI & Generative AI': ['Vertex AI', 'AWS Bedrock', 'AWS SageMaker', 'LangChain', 'BigQuery ML', 'Prompt Engineering', 'Foundation Models'],
+  'DevOps & CI/CD': ['GitHub Actions', 'GitLab CI', 'Jenkins', 'Docker', 'Terraform', 'Bitbucket Pipelines', 'IaC at Scale'],
+  'Distributed Systems & Big Data': ['BigQuery', 'Dataflow', 'Apache Beam', 'Pub/Sub', 'Dataproc', 'Apache Airflow', 'Cloud Composer', 'dbt'],
+  'Cloud Governance & FinOps': ['FinOps Framework', 'CloudZero', 'Cloud Armor', 'Cost Optimization', 'Multi-Cloud Compliance', 'HA/DR Design'],
+  'API & Application Dev': ['Apigee X', 'FastAPI', 'Flask', 'SpringBoot', 'Go (Golang)'],
+  'Languages': ['Python', 'Go', 'Java', 'SQL'],
+  'Databases': ['PostgreSQL', 'Cloud SQL', 'AWS RDS']
 };
 
 const categoryColors = locale === 'es' ? {
   'Plataformas en la Nube': 'brand-cloud',
-  'Herramientas DevOps': 'brand-devops',
-  'Big Data': 'brand-data',
+  'IA & IA Generativa': 'brand-python',
+  'DevOps & CI/CD': 'brand-devops',
+  'Big Data & Datos Distribuidos': 'brand-data',
+  'Gobernanza Cloud & FinOps': 'secondary',
+  'API & Desarrollo': 'primary',
   'Lenguajes': 'brand-python',
-  'Bases de Datos': 'primary',
-  'Otros': 'secondary'
+  'Bases de Datos': 'primary'
 } : {
   'Cloud Platforms': 'brand-cloud',
-  'DevOps Tools': 'brand-devops',
-  'Big Data': 'brand-data',
+  'AI & Generative AI': 'brand-python',
+  'DevOps & CI/CD': 'brand-devops',
+  'Distributed Systems & Big Data': 'brand-data',
+  'Cloud Governance & FinOps': 'secondary',
+  'API & Application Dev': 'primary',
   'Languages': 'brand-python',
-  'Databases': 'primary',
-  'Other': 'secondary'
+  'Databases': 'primary'
 };
 ---
 
