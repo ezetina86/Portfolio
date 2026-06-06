@@ -86,5 +86,13 @@ export const certifications = [
     image: '/img/airflow.png',
     url: 'https://www.credly.com/badges/3b6ee162-1f2e-4d6e-9385-0d6929f35441',
     description: 'Certificación en fundamentos de Apache Airflow para automatización de flujos de trabajo y orquestación de pipelines de datos.'
+  },
+  {
+    title: 'Claude Certified Architect – Foundations',
+    provider: 'Anthropic',
+    level: 'Foundational',
+    image: '/img/Anthropic.png',
+    url: 'https://verify.skilljar.com/c/vjo8xynofbsp',
+    description: 'Certificación en fundamentos de arquitectura con Claude AI, que cubre capacidades del modelo, ingeniería de prompts y despliegue responsable de IA a escala empresarial.'
   }
 ];
