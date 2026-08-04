@@ -133,6 +133,11 @@ const otherCerts = activeProviders
                   <img src={cert.image} alt={cert.title} width="72" height="72" class="w-16 h-16 object-contain mb-3" loading="lazy" />
                   <span class={`text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${meta.classes}`}>{levelLabel}</span>
                   <p class="text-xs text-gray-300 leading-snug group-hover:text-white transition-colors line-clamp-3 flex-1">{cert.title}</p>
+                  {cert.expires && (
+                    <span class="mt-1 text-[10px] text-gray-500">
+                      {locale === 'es' ? `Expira: ${cert.expires}` : `Expires: ${cert.expires}`}
+                    </span>
+                  )}
                   <span class="mt-3 text-xs text-gray-600 group-hover:text-primary transition-colors">
                     {locale === 'es' ? 'Verificar →' : 'Verify →'}
                   </span>
@@ -174,6 +179,11 @@ const otherCerts = activeProviders
                   </span>
                   <span class={`text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${meta.classes}`}>{levelLabel}</span>
                   <p class="text-xs text-gray-300 leading-snug group-hover:text-white transition-colors line-clamp-3 flex-1">{cert.title}</p>
+                  {cert.expires && (
+                    <span class="mt-1 text-[10px] text-gray-500">
+                      {locale === 'es' ? `Expira: ${cert.expires}` : `Expires: ${cert.expires}`}
+                    </span>
+                  )}
                   <span class="mt-3 text-xs text-gray-600 group-hover:text-primary transition-colors">
                     {locale === 'es' ? 'Verificar →' : 'Verify →'}
                   </span>

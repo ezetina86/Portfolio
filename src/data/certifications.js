@@ -12,7 +12,8 @@ export const certifications = [
     provider: 'GCP',
     level: 'Professional',
     image: '/img/gcpdata.png',
-    url: 'https://www.credly.com/badges/4ce10b30-39e6-4e2f-8f89-bfa9fa81af7d',
+    url: 'https://www.credly.com/badges/b755f330-a3bc-40a2-bdf9-dde649f4c99d',
+    expires: 'Sept 1, 2027',
     description: 'Professional certification for designing, building, and managing data processing systems on Google Cloud.'
   },
   {
@@ -76,7 +77,8 @@ export const certifications = [
     provider: 'HashiCorp',
     level: 'Associate',
     image: '/img/terraform.png',
-    url: 'https://www.credly.com/badges/a77cf6de-d9d7-4900-9b27-cb8ab6939c15',
+    url: 'https://www.credly.com/badges/ae2c5476-4f42-413a-842d-3495e8ab6b81',
+    expires: 'Jul 24, 2028',
     description: 'Infrastructure as Code certification for managing cloud resources using Terraform.'
   },
   {
